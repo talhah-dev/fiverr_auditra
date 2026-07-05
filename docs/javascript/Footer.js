@@ -44,7 +44,6 @@ footer.innerHTML = `
                 <ul class="space-y-3 text-sm">
                     <li><a href="about.html" class="text-[#5B6472] hover:text-[#0199a6] transition-colors duration-200">About Us</a></li>
                     <li><a href="contact.html" class="text-[#5B6472] hover:text-[#0199a6] transition-colors duration-200">Contact</a></li>
-                    <li><a href="#" class="text-[#5B6472] hover:text-[#0199a6] transition-colors duration-200">Careers</a></li>
                     <li><a href="demo.html" class="text-[#5B6472] hover:text-[#0199a6] transition-colors duration-200">Schedule Demo</a></li>
                 </ul>
             </div>
@@ -76,10 +75,7 @@ footer.innerHTML = `
         <div class="pt-8 border-t border-[#E3E8EF] flex flex-col md:flex-row items-center justify-between gap-4">
             <p class="text-xs text-[#5B6472]">© 2024 Auditra Compliance. All rights reserved.</p>
             <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-                <a href="privacy-policy.html" class="text-xs text-[#5B6472] hover:text-[#02306c] transition-colors">Privacy Policy</a>
-                <a href="terms-of-service.html" class="text-xs text-[#5B6472] hover:text-[#02306c] transition-colors">Terms of Service</a>
-                <a href="cookie-policy.html" class="text-xs text-[#5B6472] hover:text-[#02306c] transition-colors">Cookie Policy</a>
-                <a href="accessibility-statement.html" class="text-xs text-[#5B6472] hover:text-[#02306c] transition-colors">Accessibility Statement</a>
+                <span class="text-xs text-[#5B6472]">Trusted compliance support for multi facility care teams.</span>
             </div>
         </div>
     </div>
