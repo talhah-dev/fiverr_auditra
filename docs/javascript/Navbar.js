@@ -35,33 +35,68 @@ navbar.innerHTML = `
 
   <div id="menuOverlay" class="fixed inset-0 z-[60] hidden bg-black/40 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
 
-  <aside id="menuPanel" class="fixed right-0 top-0 z-[70] h-full w-[88%] max-w-sm translate-x-full bg-white shadow-2xl shadow-black/10 ring-1 ring-black/5 transition-transform duration-300 ease-out overflow-y-auto" aria-hidden="true">
-    <div class="flex items-center justify-between px-5 py-5">
+  <aside id="menuPanel" class="fixed right-0 top-0 z-[70] h-full w-full max-w-sm translate-x-full bg-white shadow-2xl shadow-black/10 ring-1 ring-black/5 transition-transform duration-300 ease-out overflow-y-auto" aria-hidden="true">
+    <div class="flex items-center justify-between px-5 py-5 border-b border-[#E9EEF5]">
       <a href="index.html" class="inline-flex items-center">
         <img src="./docs/assets/logo.png" alt="Auditra" class="h-9 w-auto">
       </a>
-      <button id="closeBtn" type="button" aria-label="Close menu" class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#02306c]/5 text-[#02306c] transition hover:bg-[#02306c]/15 active:scale-[0.98]">
+      <button id="closeBtn" type="button" aria-label="Close menu" class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-[#02306c] transition hover:bg-[#F3F7FB] active:scale-[0.98]">
         <i class="fa-solid fa-xmark text-lg"></i>
       </button>
     </div>
 
-    <div class="px-5">
-      <nav class="mt-5">
-        <ul class="space-y-2">
-          <li><a class="mLink flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-[#1A2233] ring-1 ring-[#02306c]/15 hover:bg-[#02306c]/5 transition" href="index.html">Home</a></li>
-          <li><a class="mLink flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-[#1A2233] ring-1 ring-[#02306c]/15 hover:bg-[#02306c]/5 transition" href="features.html">Features</a></li>
-          <li><a class="mLink flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-[#1A2233] ring-1 ring-[#02306c]/15 hover:bg-[#02306c]/5 transition" href="pricing.html">Pricing</a></li>
-          <li><a class="mLink flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-[#1A2233] ring-1 ring-[#02306c]/15 hover:bg-[#02306c]/5 transition" href="demo.html">Demo</a></li>
-          <li><a class="mLink flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-[#1A2233] ring-1 ring-[#02306c]/15 hover:bg-[#02306c]/5 transition" href="resources.html">Resources</a></li>
-          <li><a class="mLink flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-[#1A2233] ring-1 ring-[#02306c]/15 hover:bg-[#02306c]/5 transition" href="about.html">About</a></li>
-          <li><a class="mLink flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-[#1A2233] ring-1 ring-[#02306c]/15 hover:bg-[#02306c]/5 transition" href="contact.html">Contact</a></li>
+    <div class="px-3 pt-2 pb-5">
+      <nav class="mt-2">
+        <ul class="divide-y divide-[#E9EEF5]">
+          <li>
+            <a class="mLink flex items-center justify-between px-3 py-4 text-[17px] font-medium text-[#0F172A] hover:text-[#5F5AF6] transition" href="index.html">
+              <span>Home</span>
+              <i class="fa-solid fa-chevron-right text-[#0199a6] text-sm"></i>
+            </a>
+          </li>
+          <li>
+            <a class="mLink flex items-center justify-between px-3 py-4 text-[17px] font-medium text-[#0F172A] hover:text-[#5F5AF6] transition" href="features.html">
+              <span>Features</span>
+              <i class="fa-solid fa-chevron-right text-[#0199a6] text-sm"></i>
+            </a>
+          </li>
+          <li>
+            <a class="mLink flex items-center justify-between px-3 py-4 text-[17px] font-medium text-[#0F172A] hover:text-[#5F5AF6] transition" href="pricing.html">
+              <span>Pricing</span>
+              <i class="fa-solid fa-chevron-right text-[#0199a6] text-sm"></i>
+            </a>
+          </li>
+          <li>
+            <a class="mLink flex items-center justify-between px-3 py-4 text-[17px] font-medium text-[#0F172A] hover:text-[#5F5AF6] transition" href="demo.html">
+              <span>Demo</span>
+              <i class="fa-solid fa-chevron-right text-[#0199a6] text-sm"></i>
+            </a>
+          </li>
+          <li>
+            <a class="mLink flex items-center justify-between px-3 py-4 text-[17px] font-medium text-[#0F172A] hover:text-[#5F5AF6] transition" href="resources.html">
+              <span>Resources</span>
+              <i class="fa-solid fa-chevron-right text-[#0199a6] text-sm"></i>
+            </a>
+          </li>
+          <li>
+            <a class="mLink flex items-center justify-between px-3 py-4 text-[17px] font-medium text-[#0F172A] hover:text-[#5F5AF6] transition" href="about.html">
+              <span>About</span>
+              <i class="fa-solid fa-chevron-right text-[#0199a6] text-sm"></i>
+            </a>
+          </li>
+          <li>
+            <a class="mLink flex items-center justify-between px-3 py-4 text-[17px] font-medium text-[#0F172A] hover:text-[#5F5AF6] transition" href="contact.html">
+              <span>Contact</span>
+              <i class="fa-solid fa-chevron-right text-[#0199a6] text-sm"></i>
+            </a>
+          </li>
         </ul>
       </nav>
 
-      <div class="rounded-2xl border border-[#02306c]/15 bg-[#02306c]/5 p-4 mt-5">
-        <p class="text-sm font-extrabold text-[#02306c]">Ready to get started?</p>
-        <p class="mt-1 text-sm text-[#02306c]/70">Schedule a demo to see Auditra in action.</p>
-        <a href="contact.html" class="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#0199a6] p-3 text-sm font-extrabold text-white shadow-lg shadow-black/10 transition hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-[#0199a6]/30">Schedule Demo</a>
+      <div class="px-2 pt-6">
+        <a href="contact.html" class="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#02306c] px-4 py-3.5 text-[15px] font-semibold text-white shadow-[0_10px_24px_rgba(2,48,108,0.22)] transition hover:bg-[#0199a6] active:scale-[0.99]">
+          Contact sales
+        </a>
       </div>
 
       <div class="h-8"></div>
