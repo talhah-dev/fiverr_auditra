@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Auditra | Demo</title>
+    <link rel="icon" href="./docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.1/dist/lenis.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="stylesheet" href="./docs/Style.css" />
+
+
+
+</head>
+
+
+<body>
+
+    <div id="bottomToTopScroll"></div>
+
+    <main>
+        <div id="navbar"></div>
+
+
+        <section class="relative overflow-hidden bg-[#F7F9FB] pt-36 md:pt-44 pb-24 md:pb-32">
+            <div class="absolute inset-0 -z-10 pointer-events-none">
+                <div class="absolute inset-0 hero-grid"></div>
+                <div class="absolute -top-32 left-1/4 w-[600px] h-[600px] rounded-full bg-[#0199a6]/15 blur-3xl"></div>
+                <div class="absolute top-20 -right-32 w-[700px] h-[700px] rounded-full bg-[#02306c]/10 blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-[#0199a6]/5 blur-3xl"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto text-center flex flex-col items-center">
+
+                    <div data-aos="fade-up"
+                        class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white border border-[#E3E8EF] shadow-sm">
+                        <span class="relative flex h-2 w-2">
+                            <span
+                                class="absolute inline-flex h-full w-full rounded-full bg-[#0199a6] opacity-60 animate-ping"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-[#0199a6]"></span>
+                        </span>
+                        <span class="text-[11px] font-semibold tracking-[0.18em] text-[#5B6472]">SEE AUDITRA IN
+                            ACTION</span>
+                    </div>
+
+                    <h1 data-aos="fade-up" data-aos-delay="120"
+                        class="mt-7 font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-[-0.02em] text-[#02306c]">
+                        Watch how Auditra keeps every facility <span
+                            class="relative inline-block text-[#0199a6]">survey-ready<svg
+                                class="absolute -bottom-2 left-0 w-full" height="8" viewBox="0 0 300 8" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                                <path d="M2 5 Q 75 1 150 4 T 298 4" stroke="#0199a6" stroke-width="2.5"
+                                    stroke-linecap="round" opacity="0.4" />
+                            </svg></span>.
+                    </h1>
+
+                    <p data-aos="fade-up" data-aos-delay="240"
+                        class="mt-7 text-base md:text-lg text-[#5B6472] leading-[1.7] max-w-2xl">
+                        A quick look at how audits, corrective actions, and reporting come together in one platform.
+                    </p>
+                </div>
+
+                <section class="relative mt-10 overflow-hidden">
+                    <div
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#0199a6]/5 rounded-full blur-3xl pointer-events-none">
+                    </div>
+
+                    <div class="max-w-6xl mx-auto px-6 lg:px-8 relative">
+
+                        <div id="videoContainer"
+                            class="relative aspect-video bg-[#02306c] rounded-2xl shadow-2xl shadow-[#02306c]/20 border border-[#E3E8EF] overflow-hidden group"
+                            data-aos="zoom-in">
+
+                            <div id="videoPlaceholder"
+                                class="absolute inset-0 cursor-pointer transition-opacity duration-500">
+
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-br from-[#02306c] via-[#01224f] to-[#02306c]">
+                                </div>
+
+                                <div class="absolute inset-0 opacity-10"
+                                    style="background-image: linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px); background-size: 40px 40px;">
+                                </div>
+
+                                <div
+                                    class="absolute top-0 left-0 w-64 h-64 bg-[#0199a6]/20 rounded-full blur-3xl pointer-events-none group-hover:bg-[#0199a6]/30 transition-colors duration-500">
+                                </div>
+                                <div
+                                    class="absolute bottom-0 right-0 w-96 h-96 bg-[#0199a6]/10 rounded-full blur-3xl pointer-events-none group-hover:bg-[#0199a6]/20 transition-colors duration-500">
+                                </div>
+
+                                <div class="relative h-full flex flex-col items-center justify-center p-8 text-center">
+                                    <div
+                                        class="mb-8 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-[11px] font-bold tracking-[0.18em] uppercase shadow-sm">
+                                        <i class="fa-solid fa-circle-play text-[#0199a6]"></i>
+                                        Platform Overview
+                                    </div>
+
+                                    <button
+                                        class="relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+                                        aria-label="Play video">
+                                        <span class="absolute inset-0 rounded-full bg-[#0199a6]/30 animate-ping"></span>
+                                        <span
+                                            class="relative w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#0199a6] flex items-center justify-center shadow-lg group-hover:bg-[#01b0a8] transition-colors">
+                                            <i class="fa-solid fa-play text-white text-xl md:text-2xl ml-1"></i>
+                                        </span>
+                                    </button>
+
+                                    <h3 class="mt-8 font-display text-xl md:text-2xl font-bold text-white max-w-lg">
+                                        Auditra Platform Walkthrough</h3>
+                                    <p class="mt-2 text-sm text-white/60">See how Auditra standardizes compliance across
+                                        your facilities.</p>
+
+                                    <div
+                                        class="absolute bottom-6 right-6 bg-black/50 backdrop-blur-sm text-white text-xs font-medium px-3 py-1.5 rounded-full flex items-center gap-2">
+                                        <i class="fa-solid fa-clock text-[10px] text-[#0199a6]"></i>
+                                        2:45
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="videoIframeContainer" class="hidden w-full h-full"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        const placeholder = document.getElementById('videoPlaceholder');
+                        const iframeContainer = document.getElementById('videoIframeContainer');
+
+                        if (placeholder) {
+                            placeholder.addEventListener('click', () => {
+                                placeholder.style.opacity = '0';
+                                setTimeout(() => {
+                                    placeholder.style.display = 'none';
+                                    iframeContainer.classList.remove('hidden');
+                                    iframeContainer.innerHTML = `
+                        <iframe 
+                            class="w-full h-full" 
+                            src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0" 
+                            title="Auditra Platform Demo" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    `;
+                                }, 500);
+                            });
+                        }
+                    });
+                </script>
+            </div>
+        </section>
+
+
+        <section class="relative bg-white py-14 md:py-28 overflow-hidden">
+
+
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                    <span
+                        class="inline-block px-4 py-1.5 rounded-full bg-white border border-[#E3E8EF] text-[#02306c] text-[11px] font-bold tracking-[0.18em] uppercase ">Screenshot
+                        Gallery</span>
+                    <h2
+                        class="mt-6 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-[#02306c] tracking-tight leading-[1.1]">
+                        A closer look at the interface.
+                    </h2>
+                    <p class="mt-5 text-base md:text-lg text-[#5B6472] leading-relaxed">
+                        Clean, intuitive, and built for speed. Here is a glimpse of what your team will be using every
+                        day.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                    <div class="bg-white rounded-2xl border border-[#E3E8EF] shadow-sm hover:shadow-xl hover:shadow-[#02306c]/10 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden group"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <div
+                            class="relative h-48 bg-[#F7F9FB] border-b border-[#E3E8EF] p-4 flex flex-col justify-center">
+                            <div
+                                class="absolute top-3 right-3 text-[9px] font-bold text-[#5B6472] bg-white px-2 py-1 rounded-md border border-[#E3E8EF]">
+                                Audit View</div>
+                            <div class="space-y-2.5">
+                                <div
+                                    class="flex items-center gap-2 p-2 bg-white rounded-lg border border-[#E3E8EF] shadow-xs">
+                                    <div class="w-4 h-4 rounded bg-[#0199a6] flex items-center justify-center"><i
+                                            class="fa-solid fa-check text-[8px] text-white"></i></div>
+                                    <div class="h-1.5 bg-[#02306c]/20 rounded-full w-3/4"></div>
+                                </div>
+                                <div
+                                    class="flex items-center gap-2 p-2 bg-white rounded-lg border border-[#E3E8EF] shadow-xs">
+                                    <div class="w-4 h-4 rounded border-2 border-[#E3E8EF]"></div>
+                                    <div class="h-1.5 bg-[#02306c]/10 rounded-full w-1/2"></div>
+                                </div>
+                                <div
+                                    class="flex items-center gap-2 p-2 bg-white rounded-lg border border-[#E3E8EF] shadow-xs">
+                                    <div class="w-4 h-4 rounded bg-[#0199a6] flex items-center justify-center"><i
+                                            class="fa-solid fa-check text-[8px] text-white"></i></div>
+                                    <div class="h-1.5 bg-[#02306c]/20 rounded-full w-2/3"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fa-solid fa-clipboard-list text-[#02306c] text-sm"></i>
+                                <h3 class="font-display font-bold text-[#02306c] text-sm">Audit Checklist</h3>
+                            </div>
+                            <p class="text-xs text-[#5B6472]">Standardized digital audits on any device.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-[#E3E8EF] shadow-sm hover:shadow-xl hover:shadow-[#02306c]/10 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden group"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div
+                            class="relative h-48 bg-[#F7F9FB] border-b border-[#E3E8EF] p-4 flex flex-col justify-center">
+                            <div
+                                class="absolute top-3 right-3 text-[9px] font-bold text-[#5B6472] bg-white px-2 py-1 rounded-md border border-[#E3E8EF]">
+                                Action Tracker</div>
+                            <div class="space-y-2.5">
+                                <div
+                                    class="p-2.5 bg-[#FFF7ED] border border-[#FED7AA] rounded-lg flex justify-between items-center">
+                                    <div class="h-1.5 bg-[#D97706] rounded-full w-1/2"></div>
+                                    <div class="h-2 w-8 bg-[#D97706]/30 rounded-full"></div>
+                                </div>
+                                <div
+                                    class="p-2.5 bg-white border border-[#E3E8EF] rounded-lg flex justify-between items-center">
+                                    <div class="h-1.5 bg-[#02306c]/30 rounded-full w-3/4"></div>
+                                    <div class="h-2 w-8 bg-[#02306c]/20 rounded-full"></div>
+                                </div>
+                                <div
+                                    class="p-2.5 bg-[#F0FDF4] border border-[#BBF7D0] rounded-lg flex justify-between items-center">
+                                    <div class="h-1.5 bg-[#0199a6] rounded-full w-2/3"></div>
+                                    <div class="h-2 w-8 bg-[#0199a6]/30 rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fa-solid fa-list-check text-[#02306c] text-sm"></i>
+                                <h3 class="font-display font-bold text-[#02306c] text-sm">Corrective Actions</h3>
+                            </div>
+                            <p class="text-xs text-[#5B6472]">Track issues from flagged to verified.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-[#E3E8EF] shadow-sm hover:shadow-xl hover:shadow-[#02306c]/10 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden group"
+                        data-aos="fade-up" data-aos-delay="300">
+                        <div
+                            class="relative h-48 bg-[#F7F9FB] border-b border-[#E3E8EF] p-4 flex flex-col justify-center">
+                            <div
+                                class="absolute top-3 right-3 text-[9px] font-bold text-[#5B6472] bg-white px-2 py-1 rounded-md border border-[#E3E8EF]">
+                                Dashboard</div>
+                            <div class="flex items-end justify-between h-full gap-2 pt-4 pb-2">
+                                <div class="w-1/5 rounded-t bg-[#02306c]/20" style="height: 40%"></div>
+                                <div class="w-1/5 rounded-t bg-[#02306c]/30" style="height: 60%"></div>
+                                <div class="w-1/5 rounded-t bg-[#02306c]/40" style="height: 50%"></div>
+                                <div class="w-1/5 rounded-t bg-[#02306c]/60" style="height: 80%"></div>
+                                <div class="w-1/5 rounded-t bg-[#0199a6]" style="height: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fa-solid fa-chart-line text-[#02306c] text-sm"></i>
+                                <h3 class="font-display font-bold text-[#02306c] text-sm">Executive Dashboard</h3>
+                            </div>
+                            <p class="text-xs text-[#5B6472]">Portfolio-wide trends at a glance.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-[#E3E8EF] shadow-sm hover:shadow-xl hover:shadow-[#02306c]/10 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden group"
+                        data-aos="fade-up" data-aos-delay="400">
+                        <div
+                            class="relative h-48 bg-[#F7F9FB] border-b border-[#E3E8EF] p-4 flex items-center justify-center">
+                            <div
+                                class="absolute top-3 right-3 text-[9px] font-bold text-[#5B6472] bg-white px-2 py-1 rounded-md border border-[#E3E8EF]">
+                                Photo Proof</div>
+                            <div
+                                class="relative w-24 h-24 rounded-lg bg-gradient-to-br from-[#02306c]/10 to-[#0199a6]/10 border border-[#E3E8EF] flex items-center justify-center">
+                                <i class="fa-solid fa-image text-3xl text-[#02306c]/20"></i>
+                                <div
+                                    class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-[#02306c] text-white text-[8px] px-2 py-0.5 rounded-full shadow-sm flex items-center gap-1">
+                                    <i class="fa-solid fa-clock text-[7px]"></i> 10:24 AM
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fa-solid fa-camera text-[#02306c] text-sm"></i>
+                                <h3 class="font-display font-bold text-[#02306c] text-sm">Photo Documentation</h3>
+                            </div>
+                            <p class="text-xs text-[#5B6472]">Visual proof attached instantly.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="relative bg-[#F7F9FB] py-14 md:py-28 overflow-hidden">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-[#0199a6]/5 rounded-full blur-3xl pointer-events-none">
+            </div>
+            <div class="max-w-6xl mx-auto px-6 lg:px-8 relative">
+                <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                    <span
+                        class="inline-block px-4 py-1.5 rounded-full bg-[#F7F9FB] border border-[#E3E8EF] text-[#02306c] text-[11px] font-bold tracking-[0.18em] uppercase shadow-sm">What
+                        You'll See</span>
+                    <h2
+                        class="mt-6 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-[#02306c] tracking-tight leading-[1.1]">
+                        A walkthrough tailored to your facilities.
+                    </h2>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center p-8 rounded-2xl bg-[#F7F9FB] border border-[#E3E8EF] hover:shadow-xl hover:shadow-[#02306c]/5 hover:-translate-y-1 transition-all duration-300"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-[#02306c]/8 flex items-center justify-center text-[#02306c] mx-auto mb-5">
+                            <i class="fa-solid fa-clipboard-check text-xl"></i>
+                        </div>
+                        <h3 class="font-display text-lg font-bold text-[#02306c]">Standardized Audits</h3>
+                        <p class="mt-2 text-sm text-[#5B6472] leading-relaxed">See exactly how audits get standardized
+                            across every building.</p>
+                    </div>
+
+                    <div class="text-center p-8 rounded-2xl bg-[#F7F9FB] border border-[#E3E8EF] hover:shadow-xl hover:shadow-[#02306c]/5 hover:-translate-y-1 transition-all duration-300"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-[#02306c]/8 flex items-center justify-center text-[#02306c] mx-auto mb-5">
+                            <i class="fa-solid fa-list-check text-xl"></i>
+                        </div>
+                        <h3 class="font-display text-lg font-bold text-[#02306c]">Tracked Actions</h3>
+                        <p class="mt-2 text-sm text-[#5B6472] leading-relaxed">See how corrective actions get tracked to
+                            completion with zero gaps.</p>
+                    </div>
+
+                    <div class="text-center p-8 rounded-2xl bg-[#F7F9FB] border border-[#E3E8EF] hover:shadow-xl hover:shadow-[#02306c]/5 hover:-translate-y-1 transition-all duration-300"
+                        data-aos="fade-up" data-aos-delay="300">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-[#0199a6]/10 flex items-center justify-center text-[#0199a6] mx-auto mb-5">
+                            <i class="fa-solid fa-chart-pie text-xl"></i>
+                        </div>
+                        <h3 class="font-display text-lg font-bold text-[#02306c]">Executive Dashboard</h3>
+                        <p class="mt-2 text-sm text-[#5B6472] leading-relaxed">See the executive dashboard your
+                            leadership team will use daily.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative bg-white py-14 md:py-28 overflow-hidden">
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-[#02306c]/5 rounded-full blur-3xl pointer-events-none">
+            </div>
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+                <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                    <span
+                        class="inline-block px-4 py-1.5 rounded-full bg-white border border-[#E3E8EF] text-[#02306c] text-[11px] font-bold tracking-[0.18em] uppercase">Book
+                        a Live Demo</span>
+                    <h2
+                        class="mt-6 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-[#02306c] tracking-tight leading-[1.1]">
+                        Schedule your personalized walkthrough.
+                    </h2>
+                    <p class="mt-5 text-base md:text-lg text-[#5B6472] leading-relaxed">
+                        Pick a time that works for you, or fill out the form and we'll reach out to schedule.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+
+                    <div class="bg-white rounded-3xl border border-[#E3E8EF] shadow-xl shadow-[#02306c]/5 p-8 md:p-10"
+                        data-aos="fade-right">
+                        <h3 class="font-display text-2xl font-bold text-[#02306c] mb-2">Request a Demo</h3>
+                        <p class="text-[#5B6472] text-sm mb-8">Fill out the form below, and our team will reach out
+                            within one business day.</p>
+
+                        <form id="demoBookingForm" class="space-y-5" novalidate>
+                            <div>
+                                <label for="bookingName" class="block text-xs font-semibold text-[#02306c] mb-2">Full
+                                    Name <span class="text-[#0199a6]">*</span></label>
+                                <input type="text" id="bookingName" name="bookingName" required
+                                    class="w-full px-4 py-3 rounded-xl bg-[#F7F9FB] border border-[#E3E8EF] text-sm text-[#1A2233] placeholder-[#5B6472]/60 focus:outline-none focus:ring-2 focus:ring-[#0199a6]/30 focus:border-[#0199a6] transition-all"
+                                    placeholder="Jane Doe">
+                                <p class="error-text text-xs text-[#C6423C] mt-1 hidden">Please enter your name.</p>
+                            </div>
+
+                            <div>
+                                <label for="bookingEmail" class="block text-xs font-semibold text-[#02306c] mb-2">Work
+                                    Email <span class="text-[#0199a6]">*</span></label>
+                                <input type="email" id="bookingEmail" name="bookingEmail" required
+                                    class="w-full px-4 py-3 rounded-xl bg-[#F7F9FB] border border-[#E3E8EF] text-sm text-[#1A2233] placeholder-[#5B6472]/60 focus:outline-none focus:ring-2 focus:ring-[#0199a6]/30 focus:border-[#0199a6] transition-all"
+                                    placeholder="jane@org.com">
+                                <p class="error-text text-xs text-[#C6423C] mt-1 hidden">Please enter a valid email.</p>
+                            </div>
+
+                            <div>
+                                <label for="bookingOrg"
+                                    class="block text-xs font-semibold text-[#02306c] mb-2">Organization Name <span
+                                        class="text-[#0199a6]">*</span></label>
+                                <input type="text" id="bookingOrg" name="bookingOrg" required
+                                    class="w-full px-4 py-3 rounded-xl bg-[#F7F9FB] border border-[#E3E8EF] text-sm text-[#1A2233] placeholder-[#5B6472]/60 focus:outline-none focus:ring-2 focus:ring-[#0199a6]/30 focus:border-[#0199a6] transition-all"
+                                    placeholder="Riverside Care Group">
+                                <p class="error-text text-xs text-[#C6423C] mt-1 hidden">Please enter your organization.
+                                </p>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-5">
+                                <div>
+                                    <label for="bookingFacilities"
+                                        class="block text-xs font-semibold text-[#02306c] mb-2">Number of Facilities
+                                        <span class="text-[#0199a6]">*</span></label>
+                                    <input type="number" id="bookingFacilities" name="bookingFacilities" required
+                                        min="1"
+                                        class="w-full px-4 py-3 rounded-xl bg-[#F7F9FB] border border-[#E3E8EF] text-sm text-[#1A2233] placeholder-[#5B6472]/60 focus:outline-none focus:ring-2 focus:ring-[#0199a6]/30 focus:border-[#0199a6] transition-all"
+                                        placeholder="e.g., 5">
+                                    <p class="error-text text-xs text-[#C6423C] mt-1 hidden">Please enter a number.</p>
+                                </div>
+                                <div>
+                                    <label for="bookingPhone"
+                                        class="block text-xs font-semibold text-[#02306c] mb-2">Phone <span
+                                            class="text-[#5B6472] font-normal">(optional)</span></label>
+                                    <input type="tel" id="bookingPhone" name="bookingPhone"
+                                        class="w-full px-4 py-3 rounded-xl bg-[#F7F9FB] border border-[#E3E8EF] text-sm text-[#1A2233] placeholder-[#5B6472]/60 focus:outline-none focus:ring-2 focus:ring-[#0199a6]/30 focus:border-[#0199a6] transition-all"
+                                        placeholder="+1 (123) 456-7890">
+                                </div>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-[#0199a6] text-white font-semibold shadow-lg shadow-[#0199a6]/30 hover:bg-[#01807c] hover:shadow-xl hover:shadow-[#0199a6]/40 hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#0199a6]/30">
+                                Book My Demo
+                                <i class="fa-solid fa-arrow-right text-sm"></i>
+                            </button>
+                        </form>
+
+                        <div id="bookingFormSuccess"
+                            class="hidden flex-col items-center justify-center text-center py-10">
+                            <div
+                                class="w-16 h-16 rounded-full bg-[#0199a6]/10 flex items-center justify-center text-[#0199a6] mb-4">
+                                <i class="fa-solid fa-check text-2xl"></i>
+                            </div>
+                            <h3 class="font-display text-xl font-bold text-[#02306c]">Request Received!</h3>
+                            <p class="text-[#5B6472] text-sm mt-2 max-w-xs">Thank you for reaching out. Our team will
+                                contact you shortly to finalize your demo time.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-3xl border border-[#E3E8EF] shadow-xl shadow-[#02306c]/5 p-8 md:p-10 flex flex-col"
+                        data-aos="fade-left" data-aos-delay="100">
+                        <h3 class="font-display text-2xl font-bold text-[#02306c] mb-2">Pick a Time</h3>
+                        <p class="text-[#5B6472] text-sm mb-8">Select an available slot that fits your schedule.</p>
+
+                        <div class="flex-1 bg-[#F7F9FB] rounded-2xl border border-[#E3E8EF] p-4 flex flex-col">
+                            <div class="flex items-center justify-between mb-4">
+                                <h4 class="font-display font-bold text-[#02306c] text-sm">November 2024</h4>
+                                <div class="flex gap-1">
+                                    <button
+                                        class="w-6 h-6 rounded-md bg-white border border-[#E3E8EF] flex items-center justify-center text-[#5B6472] hover:bg-[#02306c] hover:text-white transition text-[10px]"><i
+                                            class="fa-solid fa-chevron-left"></i></button>
+                                    <button
+                                        class="w-6 h-6 rounded-md bg-white border border-[#E3E8EF] flex items-center justify-center text-[#5B6472] hover:bg-[#02306c] hover:text-white transition text-[10px]"><i
+                                            class="fa-solid fa-chevron-right"></i></button>
+                                </div>
+                            </div>
+                            <div
+                                class="grid grid-cols-7 gap-1 text-center text-[10px] font-bold text-[#5B6472] uppercase mb-2">
+                                <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+                            </div>
+                            <div class="grid grid-cols-7 gap-1 text-center text-xs flex-1">
+                                <div class="py-2 text-[#5B6472]/40 rounded-md">27</div>
+                                <div class="py-2 text-[#5B6472]/40 rounded-md">28</div>
+                                <div class="py-2 text-[#5B6472]/40 rounded-md">29</div>
+                                <div class="py-2 text-[#5B6472]/40 rounded-md">30</div>
+                                <div class="py-2 text-[#5B6472]/40 rounded-md">31</div>
+                                <div
+                                    class="py-2 text-[#02306c] rounded-md hover:bg-[#0199a6]/10 cursor-pointer transition">
+                                    1</div>
+                                <div class="py-2 text-[#5B6472]/40 rounded-md">2</div>
+                                <div class="py-2 text-[#5B6472]/40 rounded-md">3</div>
+                                <div
+                                    class="py-2 text-[#02306c] rounded-md hover:bg-[#0199a6]/10 cursor-pointer transition">
+                                    4</div>
+                                <div
+                                    class="py-2 text-[#02306c] rounded-md hover:bg-[#0199a6]/10 cursor-pointer transition">
+                                    5</div>
+                                <div
+                                    class="py-2 text-[#02306c] rounded-md hover:bg-[#0199a6]/10 cursor-pointer transition">
+                                    6</div>
+                                <div
+                                    class="py-2 text-[#02306c] rounded-md hover:bg-[#0199a6]/10 cursor-pointer transition">
+                                    7</div>
+                                <div class="py-2 text-white bg-[#0199a6] rounded-md font-bold cursor-pointer">8</div>
+                                <div class="py-2 text-[#5B6472]/40 rounded-md">9</div>
+                                <div class="py-2 text-[#5B6472]/40 rounded-md">10</div>
+                                <div
+                                    class="py-2 text-[#02306c] rounded-md hover:bg-[#0199a6]/10 cursor-pointer transition">
+                                    11</div>
+                                <div
+                                    class="py-2 text-[#02306c] rounded-md hover:bg-[#0199a6]/10 cursor-pointer transition">
+                                    12</div>
+                                <div
+                                    class="py-2 text-[#02306c] rounded-md hover:bg-[#0199a6]/10 cursor-pointer transition">
+                                    13</div>
+                                <div
+                                    class="py-2 text-[#02306c] rounded-md hover:bg-[#0199a6]/10 cursor-pointer transition">
+                                    14</div>
+                                <div
+                                    class="py-2 text-[#02306c] rounded-md hover:bg-[#0199a6]/10 cursor-pointer transition">
+                                    15</div>
+                                <div class="py-2 text-[#5B6472]/40 rounded-md">16</div>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-[#E3E8EF]">
+                                <p class="text-xs font-bold text-[#02306c] uppercase tracking-wider mb-3">Friday, Nov 8
+                                    - Available Times</p>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <button
+                                        class="py-2.5 text-xs font-medium text-[#02306c] bg-white border border-[#E3E8EF] rounded-lg hover:bg-[#02306c] hover:text-white transition">9:00
+                                        AM</button>
+                                    <button
+                                        class="py-2.5 text-xs font-medium text-[#02306c] bg-white border border-[#E3E8EF] rounded-lg hover:bg-[#02306c] hover:text-white transition">10:30
+                                        AM</button>
+                                    <button
+                                        class="py-2.5 text-xs font-medium text-white bg-[#02306c] border border-[#02306c] rounded-lg transition">1:00
+                                        PM</button>
+                                    <button
+                                        class="py-2.5 text-xs font-medium text-[#02306c] bg-white border border-[#E3E8EF] rounded-lg hover:bg-[#02306c] hover:text-white transition">2:30
+                                        PM</button>
+                                    <button
+                                        class="py-2.5 text-xs font-medium text-[#02306c] bg-white border border-[#E3E8EF] rounded-lg hover:bg-[#02306c] hover:text-white transition">4:00
+                                        PM</button>
+                                    <button
+                                        class="py-2.5 text-xs font-medium text-[#5B6472]/40 bg-[#F7F9FB] border border-[#E3E8EF] rounded-lg cursor-not-allowed">5:30
+                                        PM</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const bookingForm = document.getElementById('demoBookingForm');
+                const bookingSuccess = document.getElementById('bookingFormSuccess');
+
+                if (bookingForm) {
+                    bookingForm.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        let isValid = true;
+
+                        const validateField = (id, condition) => {
+                            const field = document.getElementById(id);
+                            const errorText = field.parentElement.querySelector('.error-text');
+                            if (!condition) {
+                                field.classList.add('border-[#C6423C]', 'ring-2', 'ring-[#C6423C]/20');
+                                if (errorText) errorText.classList.remove('hidden');
+                                isValid = false;
+                            } else {
+                                field.classList.remove('border-[#C6423C]', 'ring-2', 'ring-[#C6423C]/20');
+                                if (errorText) errorText.classList.add('hidden');
+                            }
+                        };
+
+                        validateField('bookingName', document.getElementById('bookingName').value.trim().length > 0);
+                        validateField('bookingOrg', document.getElementById('bookingOrg').value.trim().length > 0);
+                        validateField('bookingFacilities', document.getElementById('bookingFacilities').value > 0);
+
+                        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        validateField('bookingEmail', emailPattern.test(document.getElementById('bookingEmail').value.trim()));
+
+                        if (isValid) {
+                            bookingForm.style.display = 'none';
+                            bookingSuccess.classList.remove('hidden');
+                            bookingSuccess.classList.add('flex');
+                        }
+                    });
+                }
+            });
+        </script>
+
+
+        <div class="" id="footer"></div>
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/lenis@1.3.1/dist/lenis.min.js"></script>
+    <script src="./docs/javascript/global.js"></script>
+    <script src="./docs/javascript/Navbar.js"></script>
+    <script src="./docs/javascript/Footer.js"></script>
+
+</body>
+
+</html>
