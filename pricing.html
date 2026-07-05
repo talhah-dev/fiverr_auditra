@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Auditra — Multi-Facility Dietary Compliance Platform</title>
+    <link rel="icon" href="./docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.1/dist/lenis.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="stylesheet" href="./docs/Style.css" />
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+</head>
+
+<body>
+
+    <div id="bottomToTopScroll"></div>
+
+    <main>
+        <div id="navbar"></div>
+
+        <section class="relative overflow-hidden bg-[#F7F9FB] pt-36 md:pt-44 pb-24 md:pb-32">
+            <div class="absolute inset-0 -z-10 pointer-events-none">
+                <div class="absolute inset-0 hero-grid"></div>
+                <div class="absolute -top-32 left-1/4 w-[600px] h-[600px] rounded-full bg-[#0199a6]/15 blur-3xl"></div>
+                <div class="absolute top-20 -right-32 w-[700px] h-[700px] rounded-full bg-[#02306c]/10 blur-3xl"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">
+
+                    <div class="text-center lg:text-left flex flex-col items-center lg:items-start">
+                        <div data-aos="fade-up"
+                            class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white border border-[#E3E8EF] shadow-sm">
+                            <span class="relative flex h-2 w-2">
+                                <span
+                                    class="absolute inline-flex h-full w-full rounded-full bg-[#0199a6] opacity-60 animate-ping"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-[#0199a6]"></span>
+                            </span>
+                            <span class="text-[11px] font-semibold tracking-[0.18em] text-[#5B6472]">PRICING</span>
+                        </div>
+
+                        <h1 data-aos="fade-up" data-aos-delay="120"
+                            class="mt-7 font-display text-4xl sm:text-5xl lg:text-[3.75rem] font-bold leading-[1.05] tracking-[-0.02em] text-[#02306c]">
+                            Simple pricing that <span class="relative inline-block text-[#0199a6]">scales<svg
+                                    class="absolute -bottom-1.5 left-0 w-full" height="6" viewBox="0 0 300 6"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                                    <path d="M2 4 Q 75 1 150 3 T 298 3" stroke="#0199a6" stroke-width="2"
+                                        stroke-linecap="round" opacity="0.45" />
+                                </svg></span> with your portfolio.
+                        </h1>
+
+                        <p data-aos="fade-up" data-aos-delay="240"
+                            class="mt-7 text-base md:text-lg text-[#5B6472] leading-[1.7] max-w-xl mx-auto lg:mx-0">
+                            Auditra is priced per facility, so your investment grows in step with your organization —
+                            not ahead of it. <span class="text-[#5B6472]/60 italic">[PLACEHOLDER — confirm exact pricing
+                                model/figures with client before launch.]</span>
+                        </p>
+
+                        <div data-aos="fade-up" data-aos-delay="360"
+                            class="mt-9 flex flex-col sm:flex-row gap-3.5 sm:gap-4">
+                            <a href="contact.html"
+                                class="group inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-[#0199a6] text-white font-semibold shadow-lg shadow-[#0199a6]/30 hover:bg-[#01807c] hover:shadow-xl hover:shadow-[#0199a6]/40 hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#0199a6]/30">
+                                Schedule a Demo
+                                <i
+                                    class="fa-solid fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                            <a href="#pricing-tiers"
+                                class="group inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full bg-white border border-[#02306c]/15 text-[#02306c] font-semibold hover:border-[#02306c]/30 hover:bg-[#F7F9FB] hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#02306c]/10">
+                                View Plans
+                                <i
+                                    class="fa-solid fa-arrow-down text-sm transition-transform group-hover:translate-y-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="pricingHeroCard" data-aos="fade-left" data-aos-delay="300"
+                        class="relative w-full max-w-md mx-auto lg:mx-0 lg:ml-auto">
+                        <div
+                            class="absolute inset-4 bg-gradient-to-tr from-[#0199a6]/20 via-[#02306c]/10 to-transparent blur-2xl rounded-3xl">
+                        </div>
+
+                        <div
+                            class="relative bg-white rounded-2xl shadow-2xl shadow-[#02306c]/15 border border-[#E3E8EF] overflow-hidden">
+                            <div class="p-6 border-b border-[#E3E8EF] bg-[#F7F9FB]/70">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-2.5">
+                                        <div
+                                            class="w-10 h-10 rounded-xl bg-[#02306c] flex items-center justify-center text-white text-sm font-bold">
+                                            A</div>
+                                        <span class="font-display font-bold text-[#02306c]">Auditra Pro</span>
+                                    </div>
+                                    <span
+                                        class="text-[10px] font-bold text-[#0199a6] bg-[#0199a6]/10 px-2.5 py-1 rounded-full uppercase tracking-wider">Enterprise</span>
+                                </div>
+                            </div>
+
+                            <div class="p-6">
+                                <p class="text-xs text-[#5B6472] font-medium">Billed Annually</p>
+                                <div class="flex items-end gap-1.5 mt-1.5">
+                                    <span class="font-display text-5xl font-bold text-[#02306c]">$249</span>
+                                    <span class="text-base font-medium text-[#5B6472] mb-1.5">/ facility / mo</span>
+                                </div>
+
+                                <div class="mt-6 space-y-3">
+                                    <div
+                                        class="flex items-center justify-between p-3 rounded-xl bg-[#F7F9FB] border border-[#E3E8EF]">
+                                        <span class="text-sm text-[#5B6472] flex items-center gap-2"><i
+                                                class="fa-solid fa-building text-[#02306c] text-xs"></i>
+                                            Facilities</span>
+                                        <span class="text-sm font-bold text-[#02306c]">10</span>
+                                    </div>
+                                    <div
+                                        class="flex items-center justify-between p-3 rounded-xl bg-[#F7F9FB] border border-[#E3E8EF]">
+                                        <span class="text-sm text-[#5B6472] flex items-center gap-2"><i
+                                                class="fa-solid fa-calendar-check text-[#02306c] text-xs"></i> Billing
+                                            Cycle</span>
+                                        <span class="text-sm font-bold text-[#02306c]">Annual</span>
+                                    </div>
+                                    <div
+                                        class="flex items-center justify-between p-3 rounded-xl bg-[#0199a6]/5 border border-[#0199a6]/20">
+                                        <span class="text-sm text-[#02306c] font-semibold flex items-center gap-2"><i
+                                                class="fa-solid fa-calculator text-[#0199a6] text-xs"></i> Estimated
+                                            Total</span>
+                                        <span class="text-sm font-bold text-[#0199a6]">$2,490 / mo</span>
+                                    </div>
+                                </div>
+
+                                <button
+                                    class="mt-6 w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#02306c] text-white text-sm font-semibold hover:bg-[#01224f] transition-colors duration-300 shadow-md">
+                                    Start Free Trial
+                                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div
+                            class="absolute -top-5 -left-5 bg-white rounded-2xl shadow-xl shadow-[#02306c]/15 border border-[#E3E8EF] p-3.5 float-a">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-9 h-9 rounded-xl bg-[#0199a6]/10 flex items-center justify-center"><i
+                                        class="fa-solid fa-percent text-[#0199a6] text-sm"></i></div>
+                                <div>
+                                    <p class="text-[9px] font-bold uppercase tracking-wider text-[#5B6472]">Volume
+                                        Discount</p>
+                                    <p class="text-sm font-bold text-[#02306c] font-display leading-tight">15% off 20+
+                                        facil.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="absolute -bottom-5 -right-3 bg-white rounded-2xl shadow-xl shadow-[#02306c]/15 border border-[#E3E8EF] p-3.5 float-b">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-9 h-9 rounded-xl bg-[#02306c]/8 flex items-center justify-center"><i
+                                        class="fa-solid fa-shield-halved text-[#02306c] text-sm"></i></div>
+                                <div>
+                                    <p class="text-[9px] font-bold uppercase tracking-wider text-[#5B6472]">No Setup
+                                        Fees</p>
+                                    <p class="text-sm font-bold text-[#02306c] font-display leading-tight">Onboard
+                                        instantly</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <div class="" id="footer"></div>
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/lenis@1.3.1/dist/lenis.min.js"></script>
+    <script src="./docs/javascript/global.js"></script>
+    <script src="./docs/javascript/Navbar.js"></script>
+    <script src="./docs/javascript/Footer.js"></script>
+
+</body>
+
+</html>

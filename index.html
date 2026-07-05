@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Auditra — Multi-Facility Dietary Compliance Platform</title>
+    <link rel="icon" href="./docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.1/dist/lenis.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="stylesheet" href="./docs/Style.css" />
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <style>
+        @keyframes floatA {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-14px) rotate(-1deg);
+            }
+        }
+
+        @keyframes floatB {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-16px) rotate(1deg);
+            }
+        }
+
+        @keyframes pulseDot {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(0.8);
+            }
+        }
+
+        @keyframes growBar {
+            from {
+                transform: scaleY(0);
+            }
+
+            to {
+                transform: scaleY(1);
+            }
+        }
+
+        @keyframes scrollX {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .float-a {
+            animation: floatA 6s ease-in-out infinite;
+        }
+
+        .float-b {
+            animation: floatB 7s ease-in-out infinite;
+            animation-delay: -2s;
+        }
+
+        .pulse-dot {
+            animation: pulseDot 2s ease-in-out infinite;
+        }
+
+        .grow-bar {
+            transform-origin: bottom;
+            animation: growBar 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+        }
+
+        .animate-scroll-x {
+            animation: scrollX 35s linear infinite;
+        }
+
+        .hero-grid {
+            background-image:
+                linear-gradient(to right, rgba(2, 48, 108, 0.06) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(2, 48, 108, 0.06) 1px, transparent 1px);
+            background-size: 56px 56px;
+            -webkit-mask-image: radial-gradient(ellipse 70% 50% at 50% 30%, black 20%, transparent 75%);
+            mask-image: radial-gradient(ellipse 70% 50% at 50% 30%, black 20%, transparent 75%);
+        }
+
+        .dashboard-3d {
+            transform: perspective(2000px) rotateX(8deg) translateY(-20px);
+            transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .dashboard-3d:hover {
+            transform: perspective(2000px) rotateX(0deg) translateY(-10px);
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-3d {
+                transform: none;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .float-a,
+            .float-b,
+            .pulse-dot,
+            .grow-bar,
+            .dashboard-3d,
+            .animate-scroll-x {
+                animation: none !important;
+                transition: none !important;
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="bottomToTopScroll"></div>
+
+    <main>
+        <div id="navbar"></div>
+
+        <section class="relative overflow-hidden pt-32 md:pt-40 pb-20 md:pb-32">
+
+            <div class="absolute inset-0 -z-10 pointer-events-none">
+                <div class="absolute inset-0 hero-grid"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+                <div class="max-w-7xl mx-auto flex flex-col items-start">
+
+                    <div data-aos="fade-up" class="flex items-center justify-center gap-3 mt-6">
+                        <div class="flex items-center -space-x-3">
+                            <div
+                                class="w-10 h-10 rounded-full bg-[#02306c] border-2 border-white shadow-sm flex items-center justify-center text-white">
+                                <i class="fa-solid fa-user-tie text-xs"></i>
+                            </div>
+                            <div
+                                class="w-10 h-10 rounded-full bg-[#0199a6] border-2 border-white shadow-sm flex items-center justify-center text-white">
+                                <i class="fa-solid fa-user-nurse text-xs"></i>
+                            </div>
+                            <div
+                                class="w-10 h-10 rounded-full bg-[#4E6C99] border-2 border-white shadow-sm flex items-center justify-center text-white">
+                                <i class="fa-solid fa-user-md text-xs"></i>
+                            </div>
+                            <div
+                                class="w-10 h-10 rounded-full bg-[#F59E0B] border-2 border-white shadow-sm flex items-center justify-center text-white">
+                                <i class="fa-solid fa-user-shield text-xs"></i>
+                            </div>
+                            <div
+                                class="w-10 h-10 rounded-full bg-[#02306c] border-2 border-white shadow-sm flex items-center justify-center text-white">
+                                <i class="fa-solid fa-house-chimney text-xs"></i>
+                            </div>
+                            <div
+                                class="w-10 h-10 rounded-full bg-[#0199a6] border-2 border-white shadow-sm flex items-center justify-center text-white">
+                                <i class="fa-solid fa-user-gear text-xs"></i>
+                            </div>
+                            <div
+                                class="w-10 h-10 rounded-full bg-[#C6423C] border-2 border-white shadow-sm flex items-center justify-center text-white">
+                                <i class="fa-solid fa-user text-xs"></i>
+                            </div>
+                        </div>
+                        <div class="text-left md:block hidden">
+                            <div class="flex items-center gap-0.5 text-[#0199a6]">
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                                <i class="fa-solid fa-star text-[10px]"></i>
+                            </div>
+                            <p class="text-xs font-semibold text-[#02306c] mt-0.5">Trusted by 200+ LTC Executives</p>
+                        </div>
+                    </div>
+
+                    <h1 data-aos="fade-up" data-aos-delay="120"
+                        class="mt-7 font-display text-3xl sm:text-5xl max-w-5xl md:text-6xl lg:text-6xl font-bold leading-tight tracking-[-0.02em] text-[#02306c]">
+                        Reduce Dietary Compliance Risk Across Every Facility Before It Becomes a <span
+                            class="relative inline-block text-[#0199a6]">Survey Deficiency.<svg
+                                class="absolute -bottom-2 left-0 w-full" height="8" viewBox="0 0 300 8" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                                <path d="M2 5 Q 75 1 150 4 T 298 4" stroke="#0199a6" stroke-width="2.5"
+                                    stroke-linecap="round" opacity="0.4" />
+                            </svg></span>
+                    </h1>
+
+                    <p data-aos="fade-up" data-aos-delay="240"
+                        class="mt-7 text-base md:text-lg text-[#5B6472] leading-[1.7] max-w-5xl">
+                        Auditra gives multi-facility long-term care organizations a standardized compliance platform to
+                        identify risks earlier, improve accountability, monitor corrective actions, and strengthen
+                        survey readiness across every building—all from one centralized system.
+                    </p>
+
+                    <div data-aos="fade-up" data-aos-delay="360"
+                        class="mt-9 md:w-auto w-full flex flex-col sm:flex-row gap-3.5 sm:gap-4">
+                        <a href="contact.html"
+                            class="group md:w-auto w-full  inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-[#0199a6] text-white font-semibold shadow-lg shadow-[#0199a6]/30 hover:bg-[#01807c] hover:shadow-xl hover:shadow-[#0199a6]/40 hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#0199a6]/30">
+                            Schedule a Demo
+                            <i
+                                class="fa-solid fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                        <a href="demo.html"
+                            class="group md:w-auto w-full  inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full bg-white border border-[#02306c]/15 text-[#02306c] font-semibold hover:border-[#02306c]/30 hover:bg-[#F7F9FB] hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#02306c]/10">
+                            <span class="w-6 h-6 rounded-full bg-[#0199a6]/10 flex items-center justify-center">
+                                <i class="fa-solid fa-play text-[10px] text-[#0199a6] ml-0.5"></i>
+                            </span>
+                            See Auditra in Action
+                        </a>
+                    </div>
+                </div>
+
+                <div data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000" class="mt-16 md:mt-24 relative">
+
+                    <!-- <div
+                        class="absolute inset-10 bg-gradient-to-tr from-[#0199a6]/20 via-[#02306c]/15 to-transparent blur-3xl rounded-full">
+                    </div> -->
+
+                    <div class="dashboard-3d relative">
+
+                        <div
+                            class="absolute md:block hidden -top-6 -right-4 md:-right-12 bg-white rounded-2xl shadow-xl shadow-[#02306c]/20 border border-[#E3E8EF] p-4 float-a w-[200px] z-20">
+                            <div class="flex items-center gap-1.5 mb-1.5">
+                                <i class="fa-solid fa-shield-halved text-[#0199a6] text-xs"></i>
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-[#5B6472]">Portfolio
+                                    Score</span>
+                            </div>
+                            <p class="text-4xl font-bold text-[#02306c] font-display leading-none">94<span
+                                    class="text-lg text-[#5B6472]">%</span></p>
+                            <div class="flex items-center gap-1 mt-2">
+                                <i class="fa-solid fa-arrow-trend-up text-[#0199a6] text-[10px]"></i>
+                                <span class="text-[11px] text-[#0199a6] font-bold">+3.2% this month</span>
+                            </div>
+                        </div>
+
+                        <div
+                            class="absolute md:-bottom-8 -bottom-12 -left-4 md:-left-12 bg-white rounded-2xl shadow-xl shadow-[#02306c]/20 border border-[#E3E8EF] p-4 float-b z-20">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-[#0199a6]/10 flex items-center justify-center"><i
+                                        class="fa-solid fa-clipboard-check text-[#0199a6] text-base"></i></div>
+                                <div>
+                                    <p class="text-[10px] font-bold uppercase tracking-wider text-[#5B6472]">Corrective
+                                        Actions</p>
+                                    <p class="text-lg font-bold text-[#02306c] font-display leading-tight">12 <span
+                                            class="text-xs font-medium text-[#5B6472]">actively tracked</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="relative bg-white rounded-2xl shadow-2xl shadow-[#02306c]/20 border border-[#E3E8EF] overflow-hidden">
+
+                            <div
+                                class="flex items-center justify-between px-6 py-4 border-b border-[#E3E8EF] bg-[#F7F9FB]/80">
+                                <div class="flex items-center gap-3">
+                                    <div class="flex gap-1.5">
+                                        <span class="w-3 h-3 rounded-full bg-[#E3E8EF]"></span>
+                                        <span class="w-3 h-3 rounded-full bg-[#E3E8EF]"></span>
+                                        <span class="w-3 h-3 rounded-full bg-[#E3E8EF]"></span>
+                                    </div>
+                                    <span class="text-xs font-medium text-[#5B6472]">auditra.app/dashboard</span>
+                                </div>
+                                <span
+                                    class="inline-flex items-center gap-1.5 text-[10px] font-bold text-[#0199a6] bg-[#0199a6]/10 px-2.5 py-1 rounded-full">
+                                    <span class="relative flex h-1.5 w-1.5">
+                                        <span
+                                            class="absolute inline-flex h-full w-full rounded-full bg-[#0199a6] opacity-75 pulse-dot"></span>
+                                        <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#0199a6]"></span>
+                                    </span>
+                                    LIVE
+                                </span>
+                            </div>
+
+                            <div class="flex">
+
+                                <div
+                                    class="hidden md:flex flex-col w-16 lg:w-56 border-r border-[#E3E8EF] p-4 gap-1 bg-[#FAFBFC]">
+                                    <div class="hidden lg:flex items-center gap-2 px-3 py-2 mb-4">
+                                        <div
+                                            class="w-8 h-8 rounded-lg bg-[#02306c] flex items-center justify-center text-white font-bold text-sm">
+                                            A</div>
+                                        <span class="font-display font-bold text-[#02306c] text-sm">Auditra</span>
+                                    </div>
+                                    <button
+                                        class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#02306c]/5 text-[#02306c] font-semibold text-sm">
+                                        <i class="fa-solid fa-grid-2 w-4 text-center"></i>
+                                        <span class="hidden lg:inline">Dashboard</span>
+                                    </button>
+                                    <button
+                                        class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#5B6472] hover:bg-[#02306c]/5 text-sm font-medium transition">
+                                        <i class="fa-solid fa-clipboard-list w-4 text-center"></i>
+                                        <span class="hidden lg:inline">Audits</span>
+                                    </button>
+                                    <button
+                                        class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#5B6472] hover:bg-[#02306c]/5 text-sm font-medium transition">
+                                        <i class="fa-solid fa-triangle-exclamation w-4 text-center"></i>
+                                        <span class="hidden lg:inline">Actions</span>
+                                    </button>
+                                    <button
+                                        class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#5B6472] hover:bg-[#02306c]/5 text-sm font-medium transition">
+                                        <i class="fa-solid fa-chart-line w-4 text-center"></i>
+                                        <span class="hidden lg:inline">Trends</span>
+                                    </button>
+                                    <button
+                                        class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#5B6472] hover:bg-[#02306c]/5 text-sm font-medium transition">
+                                        <i class="fa-solid fa-building w-4 text-center"></i>
+                                        <span class="hidden lg:inline">Facilities</span>
+                                    </button>
+                                </div>
+
+                                <div class="flex-1 p-6 lg:p-8 bg-white">
+                                    <div class="flex items-center justify-between mb-6">
+                                        <div>
+                                            <p class="text-xs font-semibold uppercase tracking-[0.15em] text-[#5B6472]">
+                                                Executive Overview</p>
+                                            <h3 class="text-xl lg:text-2xl font-bold text-[#02306c] font-display mt-1">
+                                                Compliance Status</h3>
+                                        </div>
+                                        <div class="hidden md:flex items-center gap-2">
+                                            <button
+                                                class="px-3 py-1.5 rounded-lg bg-[#F7F9FB] text-[#5B6472] text-xs font-medium border border-[#E3E8EF] hover:bg-[#02306c]/5 transition">Export</button>
+                                            <button
+                                                class="px-3 py-1.5 rounded-lg bg-[#02306c] text-white text-xs font-medium hover:bg-[#022c61] transition">Add
+                                                Facility</button>
+                                        </div>
+                                    </div>
+
+                                    <div id="hero-dashboard-counts" class="grid md:grid-cols-3 grid-cols-2 gap-3 lg:gap-4 mb-6">
+                                        <div class="p-4 rounded-xl bg-[#F7F9FB] border border-[#E3E8EF]">
+                                            <p
+                                                class="text-[10px] uppercase tracking-wider text-[#5B6472] font-semibold">
+                                                Facilities</p>
+                                            <p class="text-2xl lg:text-3xl font-bold text-[#02306c] font-display mt-1"
+                                                data-count="24">0</p>
+                                        </div>
+                                        <div class="p-4 rounded-xl bg-[#0199a6]/5 border border-[#0199a6]/20">
+                                            <p
+                                                class="text-[10px] uppercase tracking-wider text-[#0199a6] font-semibold">
+                                                Avg Score</p>
+                                            <p class="text-2xl lg:text-3xl font-bold text-[#0199a6] font-display mt-1">
+                                                <span data-count="94">0</span>%
+                                            </p>
+                                        </div>
+                                        <div class="p-4 md:col-span-1 col-span-2 rounded-xl bg-[#F7F9FB] border border-[#E3E8EF]">
+                                            <p
+                                                class="text-[10px] uppercase tracking-wider text-[#5B6472] font-semibold">
+                                                Open Actions</p>
+                                            <p class="text-2xl lg:text-3xl font-bold text-[#02306c] font-display mt-1"
+                                                data-count="12">0</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-4 rounded-xl bg-[#F7F9FB] border border-[#E3E8EF] mb-6">
+                                        <div class="flex items-center justify-between mb-4">
+                                            <p class="text-sm font-bold text-[#02306c]">Monthly Audit Performance</p>
+                                            <span class="text-xs text-[#5B6472]">Last 6 Months</span>
+                                        </div>
+                                        <div class="flex items-end justify-between h-24 lg:h-32 gap-2 lg:gap-3">
+                                            <div class="flex-1 flex flex-col items-center gap-1.5">
+                                                <div class="w-full rounded-t-md bg-[#02306c]/30 grow-bar"
+                                                    style="height: 60%"></div>
+                                                <span class="text-[9px] text-[#5B6472] font-medium">Apr</span>
+                                            </div>
+                                            <div class="flex-1 flex flex-col items-center gap-1.5">
+                                                <div class="w-full rounded-t-md bg-[#02306c]/40 grow-bar"
+                                                    style="height: 70%; animation-delay: 0.1s"></div>
+                                                <span class="text-[9px] text-[#5B6472] font-medium">May</span>
+                                            </div>
+                                            <div class="flex-1 flex flex-col items-center gap-1.5">
+                                                <div class="w-full rounded-t-md bg-[#02306c]/50 grow-bar"
+                                                    style="height: 65%; animation-delay: 0.2s"></div>
+                                                <span class="text-[9px] text-[#5B6472] font-medium">Jun</span>
+                                            </div>
+                                            <div class="flex-1 flex flex-col items-center gap-1.5">
+                                                <div class="w-full rounded-t-md bg-[#02306c]/60 grow-bar"
+                                                    style="height: 80%; animation-delay: 0.3s"></div>
+                                                <span class="text-[9px] text-[#5B6472] font-medium">Jul</span>
+                                            </div>
+                                            <div class="flex-1 flex flex-col items-center gap-1.5">
+                                                <div class="w-full rounded-t-md bg-[#02306c]/70 grow-bar"
+                                                    style="height: 75%; animation-delay: 0.4s"></div>
+                                                <span class="text-[9px] text-[#5B6472] font-medium">Aug</span>
+                                            </div>
+                                            <div class="flex-1 flex flex-col items-center gap-1.5">
+                                                <div class="w-full rounded-t-md bg-[#0199a6] grow-bar"
+                                                    style="height: 90%; animation-delay: 0.5s"></div>
+                                                <span class="text-[9px] text-[#0199a6] font-bold">Sep</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-2">
+                                        <div
+                                            class="flex items-center justify-between p-3 rounded-xl hover:bg-[#F7F9FB] transition border border-transparent hover:border-[#E3E8EF]">
+                                            <div class="flex items-center gap-3">
+                                                <div
+                                                    class="w-9 h-9 rounded-lg bg-[#0199a6]/10 flex items-center justify-center">
+                                                    <i class="fa-solid fa-house-chimney text-[#0199a6] text-xs"></i>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm font-semibold text-[#1A2233]">Riverside Care
+                                                        Center</p>
+                                                    <p class="text-[11px] text-[#5B6472]">Audited 2 days ago</p>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-16 h-1.5 rounded-full bg-[#E3E8EF] overflow-hidden">
+                                                    <div class="h-full bg-[#0199a6] rounded-full" style="width:96%">
+                                                    </div>
+                                                </div>
+                                                <span class="text-xs font-bold text-[#02306c] w-8 text-right">96%</span>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="flex items-center justify-between p-3 rounded-xl bg-[#FFF7ED] border border-[#FED7AA]">
+                                            <div class="flex items-center gap-3">
+                                                <div
+                                                    class="w-9 h-9 rounded-lg bg-[#F59E0B]/15 flex items-center justify-center">
+                                                    <i
+                                                        class="fa-solid fa-triangle-exclamation text-[#D97706] text-xs"></i>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm font-semibold text-[#1A2233]">Maplewood Senior
+                                                        Living</p>
+                                                    <p class="text-[11px] text-[#D97706] font-medium">3 open corrective
+                                                        actions</p>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-16 h-1.5 rounded-full bg-[#E3E8EF] overflow-hidden">
+                                                    <div class="h-full bg-[#F59E0B] rounded-full" style="width:78%">
+                                                    </div>
+                                                </div>
+                                                <span class="text-xs font-bold text-[#D97706] w-8 text-right">78%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative py-12 md:py-16 bg-white border-y border-[#E3E8EF] overflow-hidden">
+            <div class="relative w-full">
+                <div
+                    class="absolute left-0 top-0 bottom-0 w-20 md:w-32 z-10 bg-gradient-to-r from-white to-transparent pointer-events-none">
+                </div>
+                <div
+                    class="absolute right-0 top-0 bottom-0 w-20 md:w-32 z-10 bg-gradient-to-l from-white to-transparent pointer-events-none">
+                </div>
+
+                <div class="flex w-max animate-scroll-x hover:[animation-play-state:paused]">
+                    <div class="flex items-center gap-12 md:gap-20 pr-12 md:pr-20 shrink-0">
+                        <div
+                            class="flex items-center gap-3 text-[#02306c]/60 hover:text-[#02306c] transition-colors duration-300 cursor-default">
+                            <span class="font-display text-xl md:text-2xl font-bold tracking-tight">Riverside Health
+                                Group</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 text-[#02306c]/60 hover:text-[#02306c] transition-colors duration-300 cursor-default">
+                            <span class="font-display text-xl md:text-2xl font-bold tracking-tight">Cedarwood Senior
+                                Living</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 text-[#02306c]/60 hover:text-[#02306c] transition-colors duration-300 cursor-default">
+                            <span class="font-display text-xl md:text-2xl font-bold tracking-tight">MapleGrove
+                                Care</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 text-[#02306c]/60 hover:text-[#02306c] transition-colors duration-300 cursor-default">
+                            <span class="font-display text-xl md:text-2xl font-bold tracking-tight">Harborview
+                                Facilities</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 text-[#02306c]/60 hover:text-[#02306c] transition-colors duration-300 cursor-default">
+                            <span class="font-display text-xl md:text-2xl font-bold tracking-tight">Summit Nursing
+                                Homes</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 text-[#02306c]/60 hover:text-[#02306c] transition-colors duration-300 cursor-default">
+                            <span class="font-display text-xl md:text-2xl font-bold tracking-tight">Oakridge Senior
+                                Care</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-12 md:gap-20 pr-12 md:pr-20 shrink-0" aria-hidden="true">
+                        <div
+                            class="flex items-center gap-3 text-[#02306c]/60 hover:text-[#02306c] transition-colors duration-300 cursor-default">
+                            <span class="font-display text-xl md:text-2xl font-bold tracking-tight">Riverside Health
+                                Group</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 text-[#02306c]/60 hover:text-[#02306c] transition-colors duration-300 cursor-default">
+                            <span class="font-display text-xl md:text-2xl font-bold tracking-tight">Cedarwood Senior
+                                Living</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 text-[#02306c]/60 hover:text-[#02306c] transition-colors duration-300 cursor-default">
+                            <span class="font-display text-xl md:text-2xl font-bold tracking-tight">MapleGrove
+                                Care</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 text-[#02306c]/60 hover:text-[#02306c] transition-colors duration-300 cursor-default">
+                            <span class="font-display text-xl md:text-2xl font-bold tracking-tight">Harborview
+                                Facilities</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 text-[#02306c]/60 hover:text-[#02306c] transition-colors duration-300 cursor-default">
+                            <span class="font-display text-xl md:text-2xl font-bold tracking-tight">Summit Nursing
+                                Homes</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 text-[#02306c]/60 hover:text-[#02306c] transition-colors duration-300 cursor-default">
+                            <span class="font-display text-xl md:text-2xl font-bold tracking-tight">Oakridge Senior
+                                Care</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="stats-section" class="relative bg-[#02306c] text-white py-20 md:py-36 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 md:text-center mb-20 md:mb-28 relative z-10" data-aos="fade-up">
+                <h2
+                    class="font-display max-w-3xl mx-auto md:text-center text-3xl leading-tight md:text-5xl font-bold tracking-tight text-white">
+                    From reactive survey
+                    preparation to proactive risk management.
+                </h2>
+                <p class="mt-5 text-base md:text-lg text-[#A8C5E5] max-w-4xl mx-auto">Auditra helps long-term care
+                    organizations move from reactive survey preparation to proactive risk management creating stronger
+                    compliance programs, more consistent operations, and greater confidence across every facility.
+
+                </p>
+            </div>
+
+            <div id="stats-counts" class="max-w-6xl mx-auto px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-6 relative z-10">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <p class="font-display text-4xl md:text-5xl font-bold text-[#fff]/90">
+                        <span data-count="45" data-suffix="%">0%</span>
+                    </p>
+                    <p class="mt-3 text-sm md:text-base text-[#A8C5E5]">Reduction in repeat deficiencies</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <p class="font-display text-4xl md:text-5xl font-bold text-[#fff]/90">
+                        <span data-count="3" data-suffix="x">0x</span>
+                    </p>
+                    <p class="mt-3 text-sm md:text-base text-[#A8C5E5]">Faster survey preparation time</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <p class="font-display text-4xl md:text-5xl font-bold text-[#fff]/90">
+                        <span data-count="99" data-suffix="%">0%</span>
+                    </p>
+                    <p class="mt-3 text-sm md:text-base text-[#A8C5E5]">Corrective action closure rate</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <p class="font-display text-4xl md:text-5xl font-bold text-[#fff]/90">
+                        <span data-count="4" data-suffix="x">0x</span>
+                    </p>
+                    <p class="mt-3 text-sm md:text-base text-[#A8C5E5]">Faster survey preparation</p>
+                </div>
+            </div>
+
+            <div id="interactive-bg"
+                class="absolute bottom-0 left-0 w-full h-full pointer-events-none transition-transform duration-300 ease-out">
+                <div class="absolute bottom-0 left-0 w-full h-3/4 wavy-lines"></div>
+                <div class="absolute bottom-0 left-0 w-full h-3/4 wavy-lines-glow"></div>
+            </div>
+        </section>
+
+        <style>
+            @keyframes floatWavy {
+
+                0%,
+                100% {
+                    transform: translateY(0px) scale(1);
+                    opacity: 0.7;
+                }
+
+                50% {
+                    transform: translateY(-12px) scale(1.03);
+                    opacity: 1;
+                }
+            }
+
+            .wavy-lines {
+                background: repeating-conic-gradient(from 270deg at 50% 100%,
+                        transparent 0deg,
+                        transparent 4deg,
+                        rgba(1, 153, 166, 0.25) 4deg,
+                        rgba(1, 153, 166, 0.25) 5deg);
+                -webkit-mask-image: linear-gradient(to top, black 10%, transparent 80%);
+                mask-image: linear-gradient(to top, black 10%, transparent 80%);
+                animation: floatWavy 8s ease-in-out infinite;
+            }
+
+            .wavy-lines-glow {
+                background: repeating-conic-gradient(from 270deg at 50% 100%,
+                        transparent 0deg,
+                        transparent 6deg,
+                        rgba(255, 255, 255, 0.15) 6deg,
+                        rgba(255, 255, 255, 0.15) 7deg);
+                -webkit-mask-image: radial-gradient(ellipse 60% 80% at 50% 100%, black 20%, transparent 70%);
+                mask-image: radial-gradient(ellipse 60% 80% at 50% 100%, black 20%, transparent 70%);
+                animation: floatWavy 10s ease-in-out infinite;
+                animation-delay: -2s;
+            }
+        </style>
+
+
+        <section class="relative bg-[#F7F9FB] py-24 md:py-32 overflow-hidden">
+            <div class="absolute top-0 left-0 w-64 h-64 bg-[#0199a6]/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-[#02306c]/5 rounded-full blur-3xl"></div>
+
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+                <div class="text-center max-w-3xl mx-auto mb-10 md:mb-24" data-aos="fade-up">
+                    <span
+                        class="inline-block px-4 py-1.5 rounded-full bg-white border border-[#E3E8EF] text-[#02306c] text-[11px] font-bold tracking-[0.18em] uppercase">The
+                        Risk</span>
+                    <h2
+                        class="mt-6 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-[#02306c] tracking-tight leading-tight">
+                        When one building falls behind, the entire organization is exposed.
+                    </h2>
+                    <p class="mt-6 text-base md:text-lg text-[#5B6472] leading-relaxed">
+                        Inconsistent audits, missed corrective actions, and limited visibility can lead to survey
+                        deficiencies, financial penalties, increased regulatory scrutiny, and reputational risk.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-[1fr_auto_1fr] gap-6 lg:gap-8 items-center">
+
+                    <div class="space-y-6 lg:space-y-20 lg:pr-8">
+                        <div class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-[#E3E8EF] shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+                            data-aos="fade-left" data-aos-delay="100">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-[#02306c]/8 flex items-center justify-center text-[#02306c] shrink-0">
+                                <i class="fa-solid fa-clipboard-list text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-[#02306c] text-lg">Survey Deficiencies</h3>
+                                <p class="text-sm text-[#5B6472] mt-1">Unexpected findings during state inspections.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-[#E3E8EF] shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+                            data-aos="fade-left" data-aos-delay="200">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-[#02306c]/8 flex items-center justify-center text-[#02306c] shrink-0">
+                                <i class="fa-solid fa-sack-dollar text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-[#02306c] text-lg">Financial Penalties</h3>
+                                <p class="text-sm text-[#5B6472] mt-1">Costly fines that impact operational budgets.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center order-first lg:order-none mb-8 lg:mb-0" data-aos="zoom-in"
+                        data-aos-delay="300">
+                        <div
+                            class="relative w-[340px] h-[600px] bg-[#02306c] rounded-[3rem] p-3 shadow-2xl shadow-[#02306c]/30">
+                            <div
+                                class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-[#02306c] rounded-b-2xl z-20">
+                            </div>
+
+                            <div
+                                class="relative w-full h-full bg-[#F7F9FB] rounded-[2.4rem] overflow-hidden flex flex-col">
+                                <div class="p-5 bg-gradient-to-br from-[#02306c] to-[#01224f] text-white pt-8">
+                                    <p class="text-xs text-white/70">Good morning, Director</p>
+                                    <h4 class="font-display font-bold text-lg">Portfolio Risk</h4>
+                                    <div class="mt-4 grid grid-cols-2 gap-3">
+                                        <div class="bg-white/10 p-3 rounded-xl backdrop-blur-sm border border-white/10">
+                                            <p class="text-[10px] text-white/60 uppercase tracking-wider">Open Risks</p>
+                                            <p class="text-2xl font-bold text-[#FFD700] mt-1">14</p>
+                                        </div>
+                                        <div class="bg-white/10 p-3 rounded-xl backdrop-blur-sm border border-white/10">
+                                            <p class="text-[10px] text-white/60 uppercase tracking-wider">Avg Score</p>
+                                            <p class="text-2xl font-bold text-[#0199a6] mt-1">89%</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex-1 p-4 space-y-3 overflow-hidden">
+                                    <p class="text-[10px] font-semibold text-[#5B6472] uppercase tracking-wider">Active
+                                        Exposures</p>
+
+                                    <div class="bg-white p-3 rounded-xl border border-[#E3E8EF] shadow-sm">
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center gap-2">
+                                                <i class="fa-solid fa-triangle-exclamation text-[#D97706] text-sm"></i>
+                                                <span class="text-sm font-semibold text-[#1A2233]">Maplewood
+                                                    Senior</span>
+                                            </div>
+                                            <span
+                                                class="text-[10px] bg-[#D97706]/10 text-[#D97706] px-2 py-0.5 rounded-full font-bold">HIGH</span>
+                                        </div>
+                                        <p class="text-[11px] text-[#5B6472] mt-1.5 pl-6">Expired enteral nutrition
+                                            order</p>
+                                    </div>
+
+                                    <div class="bg-white p-3 rounded-xl border border-[#E3E8EF] shadow-sm">
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center gap-2">
+                                                <i class="fa-solid fa-burger text-[#D97706] text-sm"></i>
+                                                <span class="text-sm font-semibold text-[#1A2233]">Riverside Care</span>
+                                            </div>
+                                            <span
+                                                class="text-[10px] bg-[#D97706]/10 text-[#D97706] px-2 py-0.5 rounded-full font-bold">MED</span>
+                                        </div>
+                                        <p class="text-[11px] text-[#5B6472] mt-1.5 pl-6">Temperature log gap documented
+                                        </p>
+                                    </div>
+
+                                    <div class="bg-white p-3 rounded-xl border border-[#E3E8EF] shadow-sm">
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center gap-2">
+                                                <i class="fa-solid fa-clipboard-check text-[#0199a6] text-sm"></i>
+                                                <span class="text-sm font-semibold text-[#1A2233]">Harborview
+                                                    Nursing</span>
+                                            </div>
+                                            <span
+                                                class="text-[10px] bg-[#0199a6]/10 text-[#0199a6] px-2 py-0.5 rounded-full font-bold">LOW</span>
+                                        </div>
+                                        <p class="text-[11px] text-[#5B6472] mt-1.5 pl-6">Audit completed successfully
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6 lg:space-y-20 lg:pl-8">
+                        <div class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-[#E3E8EF] shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+                            data-aos="fade-right" data-aos-delay="100">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-[#02306c]/8 flex items-center justify-center text-[#02306c] shrink-0">
+                                <i class="fa-solid fa-magnifying-glass-chart text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-[#02306c] text-lg">Regulatory Scrutiny</h3>
+                                <p class="text-sm text-[#5B6472] mt-1">Increased oversight from state agencies.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-[#E3E8EF] shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+                            data-aos="fade-right" data-aos-delay="200">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-[#02306c]/8 flex items-center justify-center text-[#02306c] shrink-0">
+                                <i class="fa-solid fa-building-shield text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-[#02306c] text-lg">Reputational Risk</h3>
+                                <p class="text-sm text-[#5B6472] mt-1">Damage to organizational trust and credibility.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="relative bg-white py-20 md:py-32 overflow-hidden">
+            <div class="absolute top-1/4 -left-20 w-96 h-96 bg-[#02306c]/5 rounded-full blur-3xl pointer-events-none">
+            </div>
+            <div
+                class="absolute bottom-1/4 -right-20 w-96 h-96 bg-[#0199a6]/5 rounded-full blur-3xl pointer-events-none">
+            </div>
+
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+
+                    <div data-aos="fade-right">
+                        <span
+                            class="inline-block px-4 py-1.5 rounded-full bg-[#F7F9FB] border border-[#E3E8EF] text-[#02306c] text-[11px] font-bold tracking-[0.18em] uppercase">The
+                            Solution</span>
+                        <h2
+                            class="mt-6 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-[#02306c] tracking-tight leading-[1.1]">
+                            One standardized system for every facility.
+                        </h2>
+                        <p class="mt-6 text-base md:text-lg text-[#5B6472] leading-relaxed">
+                            Auditra provides executive leaders with a standardized process to monitor dietary compliance
+                            across every facility — helping teams identify issues early, drive accountability, and
+                            create consistency before surveyors arrive.
+                        </p>
+
+                        <div class="mt-10 space-y-5">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-[#0199a6]/10 flex items-center justify-center text-[#0199a6] shrink-0">
+                                    <i class="fa-solid fa-bullseye text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-[#02306c] text-base">Identify Issues Early</h4>
+                                    <p class="text-sm text-[#5B6472] mt-0.5">Catch vulnerabilities before they escalate
+                                        into deficiencies.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-[#0199a6]/10 flex items-center justify-center text-[#0199a6] shrink-0">
+                                    <i class="fa-solid fa-users-gear text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-[#02306c] text-base">Drive Accountability</h4>
+                                    <p class="text-sm text-[#5B6472] mt-0.5">Assign clear ownership and track corrective
+                                        actions to completion.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-[#0199a6]/10 flex items-center justify-center text-[#0199a6] shrink-0">
+                                    <i class="fa-solid fa-layer-group text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-[#02306c] text-base">Create Consistency</h4>
+                                    <p class="text-sm text-[#5B6472] mt-0.5">Roll out uniform processes across your
+                                        entire portfolio.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative w-full aspect-square max-w-md mx-auto" data-aos="fade-left"
+                        data-aos-delay="200">
+
+                        <div class="absolute inset-0 rounded-full bg-[#0199a6]/5 blur-3xl"></div>
+
+                        <svg id="solution-network" class="absolute inset-0 w-full h-full" viewBox="0 0 400 400"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+
+                            <g id="orbit-ring">
+                                <circle cx="200" cy="200" r="172" stroke="#0199a6" stroke-width="1.5"
+                                    stroke-dasharray="2 8" opacity="0.35" />
+                                <circle class="satellite-dot" cx="372" cy="200" r="4" fill="#0199a6" />
+                                <circle class="satellite-dot" cx="114" cy="347" r="4" fill="#02306c" />
+                                <circle class="satellite-dot" cx="114" cy="53" r="4" fill="#0199a6" />
+                            </g>
+
+                            <path id="path-riverside" d="M70,70 Q140,140 200,200" stroke="#0199a6" stroke-width="1.5"
+                                stroke-dasharray="5 6" opacity="0.3" />
+                            <path id="path-maplewood" d="M330,70 Q260,140 200,200" stroke="#0199a6" stroke-width="1.5"
+                                stroke-dasharray="5 6" opacity="0.3" />
+                            <path id="path-harborview" d="M70,330 Q140,260 200,200" stroke="#0199a6" stroke-width="1.5"
+                                stroke-dasharray="5 6" opacity="0.3" />
+                            <path id="path-cedarwood" d="M330,330 Q260,260 200,200" stroke="#0199a6" stroke-width="1.5"
+                                stroke-dasharray="5 6" opacity="0.3" />
+
+                            <circle class="flow-dot" data-path="riverside" cx="70" cy="70" r="4" fill="#0199a6" />
+                            <circle class="flow-dot" data-path="maplewood" cx="330" cy="70" r="4" fill="#0199a6" />
+                            <circle class="flow-dot" data-path="harborview" cx="70" cy="330" r="4" fill="#0199a6" />
+                            <circle class="flow-dot" data-path="cedarwood" cx="330" cy="330" r="4" fill="#0199a6" />
+                        </svg>
+
+                        <div id="core-hub"
+                            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 md:w-44 md:h-44 bg-white rounded-3xl shadow-2xl shadow-[#02306c]/20 border border-[#E3E8EF] flex flex-col items-center justify-center z-10">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-[#02306c] flex items-center justify-center text-white shadow-lg mb-3">
+                                <i class="fa-solid fa-screwdriver-wrench text-xl"></i>
+                            </div>
+                            <p class="font-display font-bold text-[#02306c] text-sm md:text-base">Auditra Core</p>
+                            <p class="text-[10px] text-[#5B6472] mt-1">Centralized Platform</p>
+                        </div>
+
+                        <div class="facility-node absolute top-[10%] left-[10%] w-24 h-24 md:w-28 md:h-28">
+                            <div class="pulse-ring absolute inset-0 rounded-2xl border-2 border-[#0199a6]"></div>
+                            <div
+                                class="relative w-full h-full bg-white rounded-2xl shadow-lg shadow-[#02306c]/10 border border-[#E3E8EF] p-3 flex flex-col justify-between">
+                                <div
+                                    class="w-8 h-8 rounded-lg bg-[#0199a6]/10 flex items-center justify-center text-[#0199a6]">
+                                    <i class="fa-solid fa-house-chimney text-xs"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] text-[#5B6472] font-medium">Facility</p>
+                                    <p class="text-xs font-bold text-[#02306c] leading-tight">Riverside</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="facility-node absolute top-[10%] right-[10%] w-24 h-24 md:w-28 md:h-28">
+                            <div class="pulse-ring absolute inset-0 rounded-2xl border-2 border-[#0199a6]"
+                                style="animation-delay:-1.5s"></div>
+                            <div
+                                class="relative w-full h-full bg-white rounded-2xl shadow-lg shadow-[#02306c]/10 border border-[#E3E8EF] p-3 flex flex-col justify-between">
+                                <div
+                                    class="w-8 h-8 rounded-lg bg-[#0199a6]/10 flex items-center justify-center text-[#0199a6]">
+                                    <i class="fa-solid fa-house-chimney text-xs"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] text-[#5B6472] font-medium">Facility</p>
+                                    <p class="text-xs font-bold text-[#02306c] leading-tight">Maplewood</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="facility-node absolute bottom-[6%] left-[10%] w-24 h-24 md:w-28 md:h-28">
+                            <div class="pulse-ring absolute inset-0 rounded-2xl border-2 border-[#0199a6]"
+                                style="animation-delay:-3s"></div>
+                            <div
+                                class="relative w-full h-full bg-white rounded-2xl shadow-lg shadow-[#02306c]/10 border border-[#E3E8EF] p-3 flex flex-col justify-between">
+                                <div
+                                    class="w-8 h-8 rounded-lg bg-[#0199a6]/10 flex items-center justify-center text-[#0199a6]">
+                                    <i class="fa-solid fa-house-chimney text-xs"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] text-[#5B6472] font-medium">Facility</p>
+                                    <p class="text-xs font-bold text-[#02306c] leading-tight">Harborview</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="facility-node absolute bottom-[6%] right-[10%] w-24 h-24 md:w-28 md:h-28">
+                            <div class="pulse-ring absolute inset-0 rounded-2xl border-2 border-[#0199a6]"
+                                style="animation-delay:-4.5s"></div>
+                            <div
+                                class="relative w-full h-full bg-white rounded-2xl shadow-lg shadow-[#02306c]/10 border border-[#E3E8EF] p-3 flex flex-col justify-between">
+                                <div
+                                    class="w-8 h-8 rounded-lg bg-[#0199a6]/10 flex items-center justify-center text-[#0199a6]">
+                                    <i class="fa-solid fa-house-chimney text-xs"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] text-[#5B6472] font-medium">Facility</p>
+                                    <p class="text-xs font-bold text-[#02306c] leading-tight">Cedarwood</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <style>
+                    @keyframes pulseRing {
+                        0% {
+                            transform: scale(1);
+                            opacity: 0.6;
+                        }
+
+                        100% {
+                            transform: scale(1.35);
+                            opacity: 0;
+                        }
+                    }
+
+                    .pulse-ring {
+                        animation: pulseRing 3s ease-out infinite;
+                    }
+                </style>
+
+                <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+                <script>
+                    gsap.to("#orbit-ring", {
+                        rotation: 360,
+                        transformOrigin: "200px 200px",
+                        duration: 40,
+                        repeat: -1,
+                        ease: "none"
+                    });
+
+                    gsap.to("#core-hub", {
+                        scale: 1.04,
+                        duration: 2.2,
+                        yoyo: true,
+                        repeat: -1,
+                        ease: "sine.inOut"
+                    });
+
+                    gsap.utils.toArray(".satellite-dot").forEach(function (dot, i) {
+                        gsap.to(dot, {
+                            scale: 1.6,
+                            opacity: 0.4,
+                            transformOrigin: "center",
+                            duration: 1.5,
+                            yoyo: true,
+                            repeat: -1,
+                            delay: i * 0.4,
+                            ease: "sine.inOut"
+                        });
+                    });
+
+                    var flowPaths = {
+                        riverside: { x: 70, y: 70 },
+                        maplewood: { x: 330, y: 70 },
+                        harborview: { x: 70, y: 330 },
+                        cedarwood: { x: 330, y: 330 }
+                    };
+
+                    gsap.utils.toArray(".flow-dot").forEach(function (dot, i) {
+                        var origin = flowPaths[dot.getAttribute("data-path")];
+                        var tl = gsap.timeline({ repeat: -1, delay: i * 0.7 });
+                        tl.set(dot, { attr: { cx: origin.x, cy: origin.y }, opacity: 1 })
+                            .to(dot, {
+                                attr: { cx: 200, cy: 200 },
+                                duration: 1.8,
+                                ease: "power1.in"
+                            })
+                            .to(dot, { opacity: 0, duration: 0.2 }, "-=0.2")
+                            .to(dot, { opacity: 0, duration: 0.6 });
+                    });
+                </script>
+            </div>
+        </section>
+
+        <script>
+            (function () {
+                const section = document.getElementById('stats-section');
+                const bg = document.getElementById('interactive-bg');
+                if (!section || !bg || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+                section.addEventListener('mousemove', (e) => {
+                    const rect = section.getBoundingClientRect();
+                    const x = (e.clientX - rect.left) / rect.width - 0.5;
+                    const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+                    bg.style.transition = 'transform 0.1s ease-out';
+                    bg.style.transform = `translate(${x * 40}px, ${y * 20}px) scale(1.05)`;
+                });
+
+                section.addEventListener('mouseleave', () => {
+                    bg.style.transition = 'transform 0.5s ease-out';
+                    bg.style.transform = 'translate(0, 0) scale(1)';
+                });
+            })();
+        </script>
+
+
+
+        <section class="bg-[#F7F9FB] py-20 md:py-32 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 md:mb-16">
+                    <div class="max-w-2xl" data-aos="fade-up">
+                        <span
+                            class="inline-block px-4 py-1.5 rounded-full bg-white border border-[#E3E8EF] text-[#02306c] text-[11px] font-bold tracking-[0.18em] uppercase ">Why
+                            Executives Choose Auditra</span>
+                        <h2
+                            class="mt-6 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-[#02306c] tracking-tight leading-[1.1]">
+                            Built for organizations, not just single buildings.
+                        </h2>
+                    </div>
+                    <div class="flex items-center gap-3 shrink-0" data-aos="fade-up" data-aos-delay="100">
+                        <button
+                            class="benefits-prev w-12 h-12 rounded-full border border-[#E3E8EF] bg-white text-[#02306c] flex items-center justify-center hover:bg-[#02306c] hover:text-white transition-colors duration-300 shadow-sm">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                        <button
+                            class="benefits-next w-12 h-12 rounded-full border border-[#E3E8EF] bg-white text-[#02306c] flex items-center justify-center hover:bg-[#02306c] hover:text-white transition-colors duration-300 shadow-sm">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="swiper benefitsSwiper overflow-visible" data-aos="fade-up" data-aos-delay="200">
+                    <div class="swiper-wrapper pb-4">
+
+                        <div class="swiper-slide h-auto">
+                            <div class="h-full flex flex-col group">
+                                <div
+                                    class="relative rounded-2xl overflow-hidden aspect-[4/5] transition-transform duration-500 group-hover:-translate-y-1">
+                                    <img src="https://media.gettyimages.com/id/2257562070/photo/computer-data-folder-automation-and-cloud-computing-network.jpg?s=612x612&w=0&k=20&c=c7wDV3aFKs0v_ZCeZ4yGFcubUpZglXap0NF7ni4KRBI="
+                                        alt="Enterprise Standardization"
+                                        class="absolute inset-0 w-full h-full object-cover" />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent">
+                                    </div>
+                                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                                        <p class="text-white font-display text-2xl font-bold leading-tight">
+                                            Enterprise<br />Standardization</p>
+                                    </div>
+                                </div>
+                                <div class="pt-6">
+                                    <p class="text-[#5B6472] leading-relaxed line-clamp-2">Implement one consistent auditing process
+                                        across every facility.</p>
+                                    <a href="features.html"
+                                        class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0199a6] hover:gap-3 transition-all">
+                                        Learn more <i class="fa-solid fa-arrow-right text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide h-auto">
+                            <div class="h-full flex flex-col group">
+                                <div
+                                    class="relative rounded-2xl overflow-hidden aspect-[4/5] transition-transform duration-500 group-hover:-translate-y-1">
+                                    <img src="https://media.gettyimages.com/id/2255942315/photo/national-counterterrorism-prosecutor-olivier-christen-poses-during-a-photo-session-in-paris.jpg?s=612x612&w=0&k=20&c=aEsrypyGmQ3vmKCXoJqMlD2ZhedR7qTlQH3jZj_eMy4="
+                                        alt="Executive Visibility"
+                                        class="absolute inset-0 w-full h-full object-cover" />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent">
+                                    </div>
+                                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                                        <p class="text-white font-display text-2xl font-bold leading-tight">
+                                            Executive<br />Visibility</p>
+                                    </div>
+                                </div>
+                                <div class="pt-6">
+                                    <p class="text-[#5B6472] leading-relaxed line-clamp-2">Monitor compliance trends and audit
+                                        performance across your organization from a centralized dashboard.</p>
+                                    <a href="features.html"
+                                        class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0199a6] hover:gap-3 transition-all">
+                                        Learn more <i class="fa-solid fa-arrow-right text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide h-auto">
+                            <div class="h-full flex flex-col group">
+                                <div
+                                    class="relative rounded-2xl overflow-hidden aspect-[4/5] transition-transform duration-500 group-hover:-translate-y-1">
+                                    <img src="https://media.istockphoto.com/id/1128252197/photo/close-up-watching.jpg?s=612x612&w=0&k=20&c=FCiU8lMylePEumjt4Xj8AnqmIZp0j7qbggrWQpDYMZA="
+                                        alt="Risk Reduction" class="absolute inset-0 w-full h-full object-cover" />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent">
+                                    </div>
+                                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                                        <p class="text-white font-display text-2xl font-bold leading-tight">
+                                            Risk<br />Reduction</p>
+                                    </div>
+                                </div>
+                                <div class="pt-6">
+                                    <p class="text-[#5B6472] leading-relaxed line-clamp-2">Identify operational vulnerabilities
+                                        before they become survey deficiencies.</p>
+                                    <a href="features.html"
+                                        class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0199a6] hover:gap-3 transition-all">
+                                        Learn more <i class="fa-solid fa-arrow-right text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide h-auto">
+                            <div class="h-full flex flex-col group">
+                                <div
+                                    class="relative rounded-2xl overflow-hidden aspect-[4/5] transition-transform duration-500 group-hover:-translate-y-1">
+                                    <img src="https://media.istockphoto.com/id/2230178867/photo/businessman-using-digital-pen-to-mark-checklist-on-virtual-screen-concept-of-task-management.jpg?s=612x612&w=0&k=20&c=1ls5hKOOnQRsqfaWNifuq5wvYR_SqaaRXuiqQqWxvbg="
+                                        alt="Accountability" class="absolute inset-0 w-full h-full object-cover" />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent">
+                                    </div>
+                                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                                        <p class="text-white font-display text-2xl font-bold leading-tight">
+                                            Accountability</p>
+                                    </div>
+                                </div>
+                                <div class="pt-6">
+                                    <p class="text-[#5B6472] leading-relaxed line-clamp-2">Track corrective actions, assign
+                                        ownership, and verify completion.</p>
+                                    <a href="features.html"
+                                        class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0199a6] hover:gap-3 transition-all">
+                                        Learn more <i class="fa-solid fa-arrow-right text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide h-auto">
+                            <div class="h-full flex flex-col group">
+                                <div
+                                    class="relative rounded-2xl overflow-hidden aspect-[4/5] transition-transform duration-500 group-hover:-translate-y-1">
+                                    <img src="https://media.istockphoto.com/id/2196678002/photo/cost-and-quality-control-concept-of-balancing-efficiency-and-cost-in-business-strategy.jpg?s=612x612&w=0&k=20&c=ZgGATIvd6IwgqHEAxMq-eqjShh-loUvrYJ1lRLjoTGc="
+                                        alt="Operational Efficiency"
+                                        class="absolute inset-0 w-full h-full object-cover" />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent">
+                                    </div>
+                                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                                        <p class="text-white font-display text-2xl font-bold leading-tight">
+                                            Operational<br />Efficiency</p>
+                                    </div>
+                                </div>
+                                <div class="pt-6">
+                                    <p class="text-[#5B6472] leading-relaxed line-clamp-2">Reduce administrative burden while
+                                        improving consistency across regional teams.</p>
+                                    <a href="features.html"
+                                        class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0199a6] hover:gap-3 transition-all">
+                                        Learn more <i class="fa-solid fa-arrow-right text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide h-auto">
+                            <div class="h-full flex flex-col group">
+                                <div
+                                    class="relative rounded-2xl overflow-hidden aspect-[4/5] transition-transform duration-500 group-hover:-translate-y-1">
+                                    <img src="https://media.istockphoto.com/id/459884399/photo/chart.jpg?s=612x612&w=0&k=20&c=-2pMLGsypTBCnLo9Y6CrjAwOxaaZk6BWyXfBL4tG4tk="
+                                        alt="Scalable Growth" class="absolute inset-0 w-full h-full object-cover" />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent">
+                                    </div>
+                                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                                        <p class="text-white font-display text-2xl font-bold leading-tight">
+                                            Scalable<br />Growth</p>
+                                    </div>
+                                </div>
+                                <div class="pt-6">
+                                    <p class="text-[#5B6472] leading-relaxed line-clamp-2">Support new acquisitions and expanding
+                                        portfolios with a standardized compliance system.</p>
+                                    <a href="features.html"
+                                        class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#0199a6] hover:gap-3 transition-all">
+                                        Learn more <i class="fa-solid fa-arrow-right text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script>
+            if (window.Swiper) {
+                new Swiper('.benefitsSwiper', {
+                    slidesPerView: 1.15,
+                    spaceBetween: 15,
+                    speed: 700,
+                    grabCursor: true,
+                    autoplay: {
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    },
+                    navigation: {
+                        nextEl: '.benefits-next',
+                        prevEl: '.benefits-prev',
+                    },
+                    breakpoints: {
+                        640: {
+                            slidesPerView: 2.1,
+                            spaceBetween: 15,
+                        },
+                        1024: {
+                            slidesPerView: 3.1,
+                            spaceBetween: 15,
+                        },
+                        1280: {
+                            slidesPerView: 3.5,
+                            spaceBetween: 15,
+                        }
+                    }
+                });
+            }
+        </script>
+
+
+        <section class="relative bg-white py-20 md:py-32 overflow-hidden">
+
+
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+                <div class="text-center max-w-3xl mx-auto mb-20 md:mb-24" data-aos="fade-up">
+                    <span
+                        class="inline-block px-4 py-1.5 rounded-full bg-[#F7F9FB] border border-[#E3E8EF] text-[#02306c] text-[11px] font-bold tracking-[0.18em] uppercase ">How
+                        It Works</span>
+                    <h2
+                        class="mt-6 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-[#02306c] tracking-tight leading-[1.1]">
+                        From daily audit to survey ready, in four steps.
+                    </h2>
+                </div>
+
+                <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+
+                    <div
+                        class="hidden lg:block absolute top-10 left-[1.5%] right-[5%] h-0.5 border-t-2 border-dashed border-[#E3E8EF] pointer-events-none">
+                    </div>
+
+                    <div class="relative text-center lg:text-left" data-aos="fade-up" data-aos-delay="100">
+                        <div
+                            class="relative inline-flex items-center justify-center w-20 h-20 bg-white rounded-2xl shadow-lg shadow-[#02306c]/5 border border-[#E3E8EF] mb-6 z-10 transition-transform duration-300 hover:scale-105">
+                            <div class="w-12 h-12 rounded-xl bg-[#02306c] flex items-center justify-center text-white">
+                                <i class="fa-solid fa-clipboard-list text-lg"></i>
+                            </div>
+                            <span
+                                class="absolute -top-3 -right-3 font-display text-sm font-bold bg-[#0199a6] text-white w-8 h-8 rounded-full flex items-center justify-center shadow-md ring-4 ring-white">01</span>
+                        </div>
+                        <h3 class="font-display text-lg font-bold text-[#02306c] mb-2">Conduct the Audit</h3>
+                        <p class="text-sm text-[#5B6472] leading-relaxed">Staff complete standardized digital
+                            kitchen/dietary audits on any device, with photo documentation attached on the spot.</p>
+                    </div>
+
+                    <div class="relative text-center lg:text-left" data-aos="fade-up" data-aos-delay="200">
+                        <div
+                            class="relative inline-flex items-center justify-center w-20 h-20 bg-white rounded-2xl shadow-lg shadow-[#02306c]/5 border border-[#E3E8EF] mb-6 z-10 transition-transform duration-300 hover:scale-105">
+                            <div class="w-12 h-12 rounded-xl bg-[#02306c] flex items-center justify-center text-white">
+                                <i class="fa-solid fa-flag text-lg"></i>
+                            </div>
+                            <span
+                                class="absolute -top-3 -right-3 font-display text-sm font-bold bg-[#0199a6] text-white w-8 h-8 rounded-full flex items-center justify-center shadow-md ring-4 ring-white">02</span>
+                        </div>
+                        <h3 class="font-display text-lg font-bold text-[#02306c] mb-2">Flag & Assign</h3>
+                        <p class="text-sm text-[#5B6472] leading-relaxed">Issues are automatically flagged, categorized
+                            by risk, and assigned to the responsible team member with a due date.</p>
+                    </div>
+
+                    <div class="relative text-center lg:text-left" data-aos="fade-up" data-aos-delay="300">
+                        <div
+                            class="relative inline-flex items-center justify-center w-20 h-20 bg-white rounded-2xl shadow-lg shadow-[#02306c]/5 border border-[#E3E8EF] mb-6 z-10 transition-transform duration-300 hover:scale-105">
+                            <div class="w-12 h-12 rounded-xl bg-[#02306c] flex items-center justify-center text-white">
+                                <i class="fa-solid fa-list-check text-lg"></i>
+                            </div>
+                            <span
+                                class="absolute -top-3 -right-3 font-display text-sm font-bold bg-[#0199a6] text-white w-8 h-8 rounded-full flex items-center justify-center shadow-md ring-4 ring-white">03</span>
+                        </div>
+                        <h3 class="font-display text-lg font-bold text-[#02306c] mb-2">Track Corrective Action</h3>
+                        <p class="text-sm text-[#5B6472] leading-relaxed">Managers and regional leaders track completion
+                            status in real time until the issue is verified closed.</p>
+                    </div>
+
+                    <div class="relative text-center lg:text-left" data-aos="fade-up" data-aos-delay="400">
+                        <div
+                            class="relative inline-flex items-center justify-center w-20 h-20 bg-white rounded-2xl shadow-lg shadow-[#02306c]/5 border border-[#E3E8EF] mb-6 z-10 transition-transform duration-300 hover:scale-105">
+                            <div class="w-12 h-12 rounded-xl bg-[#0199a6] flex items-center justify-center text-white">
+                                <i class="fa-solid fa-shield-halved text-lg"></i>
+                            </div>
+                            <span
+                                class="absolute -top-3 -right-3 font-display text-sm font-bold bg-[#02306c] text-white w-8 h-8 rounded-full flex items-center justify-center shadow-md ring-4 ring-white">04</span>
+                        </div>
+                        <h3 class="font-display text-lg font-bold text-[#02306c] mb-2">Stay Survey-Ready</h3>
+                        <p class="text-sm text-[#5B6472] leading-relaxed">Executive dashboards roll up every facility's
+                            compliance trends, so leadership always knows where risk exists — before the surveyor does.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="relative bg-[#f7f9fb] py-20 md:py-32 overflow-hidden">
+            <div class="absolute inset-0 -z-10 pointer-events-none">
+                <div class="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full bg-[#0199a6]/10 blur-[120px]">
+                </div>
+                <div class="absolute bottom-0 right-1/4 w-[600px] h-[600px] rounded-full bg-[#02306c]/10 blur-[120px]">
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+                <div class="text-center max-w-3xl mx-auto md:mb-16 mb-12" data-aos="fade-up">
+                    <span
+                        class="inline-block px-4 py-1.5 rounded-full bg-[#0199a6]/10 border border-[#0199a6]/20 text-[#0199a6] text-[11px] font-bold tracking-[0.18em] uppercase ">
+                        Pricing
+                    </span>
+
+                    <h2
+                        class="mt-6 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-[#02306c] tracking-tight leading-[1.1] ">
+                        Simple, transparent pricing built to scale with your portfolio.
+                    </h2>
+
+                    <p class="mt-6 text-base md:text-lg text-gray-600 leading-relaxed">
+                        Whether you manage a few facilities or a hundred, Auditra's pricing adapts to your organization.
+                        No hidden fees, just enterprise-grade compliance tools.
+                    </p>
+
+                    <a href="pricing.html"
+                        class="mt-8 inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#0199a6] text-white font-semibold shadow-lg shadow-[#0199a6]/20 hover:bg-[#01807c] hover:shadow-xl hover:shadow-[#0199a6]/30 hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#0199a6]/20">
+                        View Pricing
+                        <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <div class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm transition-all duration-300 hover:shadow-xl hover:border-[#0199a6]/30 hover:-translate-y-1"
+                        data-aos="fade-up" data-aos-delay="100">
+
+                        <div
+                            class="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#0199a6]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                        </div>
+
+                        <div class="relative">
+                            <h3 class="font-display text-xl font-bold text-gray-900">Starter</h3>
+
+                            <p class="mt-2 text-sm text-gray-600">
+                                For single or small multi-facility organizations.
+                            </p>
+
+                            <div class="mt-6 pt-6 border-t border-gray-200">
+                                <a href="pricing.html"
+                                    class="inline-flex items-center gap-2 text-sm font-semibold text-[#0199a6] hover:gap-3 transition-all">
+                                    See full pricing
+                                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative bg-white border border-[#0199a6]/30 rounded-2xl p-8 shadow-xl shadow-[#0199a6]/10 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+                        data-aos="fade-up" data-aos-delay="200">
+
+                        <div
+                            class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#0199a6] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
+                            Most Popular
+                        </div>
+
+                        <div
+                            class="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#0199a6]/8 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                        </div>
+
+                        <div class="relative">
+                            <h3 class="font-display text-xl font-bold text-gray-900">Professional</h3>
+
+                            <p class="mt-2 text-sm text-gray-600">
+                                For growing multi-facility organizations.
+                            </p>
+
+                            <div class="mt-6 pt-6 border-t border-gray-200">
+                                <a href="pricing.html"
+                                    class="inline-flex items-center gap-2 text-sm font-semibold text-[#0199a6] hover:gap-3 transition-all">
+                                    See full pricing
+                                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm transition-all duration-300 hover:shadow-xl hover:border-[#02306c]/20 hover:-translate-y-1"
+                        data-aos="fade-up" data-aos-delay="300">
+
+                        <div
+                            class="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#02306c]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                        </div>
+
+                        <div class="relative">
+                            <h3 class="font-display text-xl font-bold text-gray-900">Enterprise</h3>
+
+                            <p class="mt-2 text-sm text-gray-600">
+                                For large or fast growing portfolios and enterprises.
+                            </p>
+
+                            <div class="mt-6 pt-6 border-t border-gray-200">
+                                <a href="pricing.html"
+                                    class="inline-flex items-center gap-2 text-sm font-semibold text-[#0199a6] hover:gap-3 transition-all">
+                                    See full pricing
+                                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative bg-[#02306c] py-24 md:py-36 overflow-hidden">
+            <div class="absolute inset-0 pointer-events-none">
+                <div
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full bg-[#0199a6]/15 blur-[120px]">
+                </div>
+                <div class="absolute inset-0 opacity-[0.03]"
+                    style="background-image: linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px); background-size: 48px 48px;">
+                </div>
+            </div>
+
+            <div class="max-w-4xl mx-auto px-6 lg:px-8 relative text-center">
+                <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.1]"
+                    data-aos="fade-up">
+                    See how Auditra can protect every facility in your portfolio.
+                </h2>
+
+                <p class="mt-6 text-base md:text-lg text-[#A8C5E5] leading-relaxed max-w-2xl mx-auto" data-aos="fade-up"
+                    data-aos-delay="100">
+                    Request an enterprise demo and see the platform built for multi-facility compliance.
+                </p>
+
+                <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <a href="contact.html"
+                        class="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#0199a6] text-white font-semibold shadow-xl shadow-[#0199a6]/30 hover:bg-[#01807c] hover:shadow-2xl hover:shadow-[#0199a6]/40 hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#0199a6]/30 w-full sm:w-auto">
+                        Request an Enterprise Demo
+                        <i class="fa-solid fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                    <a href="features.html"
+                        class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white/5 backdrop-blur-sm border border-white/15 text-white font-semibold hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-white/10 w-full sm:w-auto">
+                        Explore Features
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="" id="footer"></div>
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/lenis@1.3.1/dist/lenis.min.js"></script>
+    <script src="./docs/javascript/global.js"></script>
+    <script src="./docs/javascript/Navbar.js"></script>
+    <script src="./docs/javascript/Footer.js"></script>
+
+    <script>
+        if (window.AOS) {
+            AOS.init({ once: true, duration: 800, offset: 60, easing: 'ease-out-cubic' });
+        }
+
+        (function () {
+            const sections = [
+                document.getElementById('hero-dashboard-counts'),
+                document.getElementById('stats-counts'),
+            ].filter(Boolean);
+
+            const animateCount = (el) => {
+                const target = Number(el.getAttribute('data-count')) || 0;
+                const suffix = el.getAttribute('data-suffix') || '';
+                const duration = 1600;
+                const start = performance.now();
+
+                const step = (now) => {
+                    const progress = Math.min((now - start) / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    el.textContent = `${Math.round(target * eased)}${suffix}`;
+                    if (progress < 1) requestAnimationFrame(step);
+                };
+
+                requestAnimationFrame(step);
+            };
+
+            if (!sections.length) return;
+
+            const animatedSections = new WeakSet();
+            const obs = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    if (animatedSections.has(entry.target)) return;
+                    animatedSections.add(entry.target);
+                    entry.target.querySelectorAll('[data-count]').forEach(animateCount);
+                    obs.unobserve(entry.target);
+                });
+            }, { threshold: 0.35 });
+
+            sections.forEach((section) => obs.observe(section));
+        })();
+    </script>
+
+</body>
+
+</html>
