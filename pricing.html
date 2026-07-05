@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="./docs/Style.css" />
 
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
 </head>
 
@@ -44,7 +43,7 @@
 
                     <div class="text-center lg:text-left flex flex-col items-center lg:items-start">
                         <div data-aos="fade-up"
-                            class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white border border-[#E3E8EF] shadow-sm">
+                            class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white border border-[#E3E8EF] ">
                             <span class="relative flex h-2 w-2">
                                 <span
                                     class="absolute inline-flex h-full w-full rounded-full bg-[#0199a6] opacity-60 animate-ping"></span>
@@ -65,9 +64,8 @@
 
                         <p data-aos="fade-up" data-aos-delay="240"
                             class="mt-7 text-base md:text-lg text-[#5B6472] leading-[1.7] max-w-xl mx-auto lg:mx-0">
-                            Auditra is priced per facility, so your investment grows in step with your organization —
-                            not ahead of it. <span class="text-[#5B6472]/60 italic">[PLACEHOLDER — confirm exact pricing
-                                model/figures with client before launch.]</span>
+                            Auditra is priced per facility, so your investment grows in step with your organization
+                            not ahead of it.
                         </p>
 
                         <div data-aos="fade-up" data-aos-delay="360"
@@ -148,7 +146,7 @@
                         </div>
 
                         <div
-                            class="absolute -top-5 -left-5 bg-white rounded-2xl shadow-xl shadow-[#02306c]/15 border border-[#E3E8EF] p-3.5 float-a">
+                            class="absolute -top-12 md:-left-5 -left-3 bg-white rounded-2xl shadow-xl shadow-[#02306c]/15 border border-[#E3E8EF] p-3.5 float-a">
                             <div class="flex items-center gap-2.5">
                                 <div class="w-9 h-9 rounded-xl bg-[#0199a6]/10 flex items-center justify-center"><i
                                         class="fa-solid fa-percent text-[#0199a6] text-sm"></i></div>
@@ -162,7 +160,7 @@
                         </div>
 
                         <div
-                            class="absolute -bottom-5 -right-3 bg-white rounded-2xl shadow-xl shadow-[#02306c]/15 border border-[#E3E8EF] p-3.5 float-b">
+                            class="absolute -bottom-12 -right-3 bg-white rounded-2xl shadow-xl shadow-[#02306c]/15 border border-[#E3E8EF] p-3.5 float-b">
                             <div class="flex items-center gap-2.5">
                                 <div class="w-9 h-9 rounded-xl bg-[#02306c]/8 flex items-center justify-center"><i
                                         class="fa-solid fa-shield-halved text-[#02306c] text-sm"></i></div>
@@ -180,6 +178,463 @@
             </div>
         </section>
 
+        <section id="pricing-tiers" class="bg-white py-16 md:py-28 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+                <div class="flex flex-col items-center md:mb-16 mb-8" data-aos="fade-up">
+                    <div
+                        class="relative inline-flex items-center justify-center gap-3 p-1.5 bg-[#F7F9FB] border border-[#E3E8EF] rounded-full shadow-sm">
+                        <button id="monthlyBtn"
+                            class="relative px-6 py-2.5 text-sm font-semibold rounded-full transition-colors duration-300 text-[#5B6472] z-10">
+                            Monthly
+                        </button>
+                        <button id="annualBtn"
+                            class="relative px-6 py-2.5 text-sm font-semibold rounded-full transition-colors duration-300 text-[#5B6472] z-10 flex items-center gap-2">
+                            Annual
+                            <span
+                                class="text-[10px] bg-[#0199a6]/10 text-[#0199a6] px-2 py-0.5 rounded-full font-bold">SAVE
+                                20%</span>
+                        </button>
+                        <div id="togglePill"
+                            class="absolute top-1.5 left-1.5 h-[calc(100%-12px)] bg-white rounded-full shadow-sm transition-all duration-300 ease-out">
+                        </div>
+                    </div>
+                    <p class="mt-4 text-sm text-[#5B6472] text-center">Prices are per facility. Cancel or change plans anytime.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-8 items-center">
+
+                    <div class="bg-white rounded-3xl border border-[#E3E8EF] p-8 shadow-sm hover:shadow-xl hover:shadow-[#02306c]/5 transition-all duration-300 hover:-translate-y-1"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="font-display text-xl font-bold text-[#02306c]">Starter</h3>
+                            <div
+                                class="w-10 h-10 rounded-xl bg-[#02306c]/5 flex items-center justify-center text-[#02306c]">
+                                <i class="fa-solid fa-seedling"></i>
+                            </div>
+                        </div>
+                        <p class="text-sm text-[#5B6472] mb-6">For single or small multi-facility organizations getting
+                            started with digital compliance.</p>
+
+                        <div class="mb-8">
+                            <div class="flex items-end gap-1.5">
+                                <span class="font-display text-5xl font-bold text-[#02306c] price-display"
+                                    data-monthly="$149" data-annual="$119">$149</span>
+                                <span class="text-base font-medium text-[#5B6472] mb-1.5">/ facility / mo</span>
+                            </div>
+                            <p id="billing-text-1" class="text-xs text-[#5B6472] mt-2">Billed Monthly</p>
+                        </div>
+
+                        <a href="contact.html"
+                            class="block w-full text-center px-6 py-3 rounded-full bg-white border border-[#02306c]/20 text-[#02306c] font-semibold hover:bg-[#02306c] hover:text-white transition-colors duration-300 mb-8">
+                            Schedule Demo
+                        </a>
+
+                        <ul class="space-y-4 text-sm">
+                            <li class="flex items-start gap-3 text-[#1A2233]"><i
+                                    class="fa-solid fa-check text-[#0199a6] mt-1"></i> Digital kitchen audits</li>
+                            <li class="flex items-start gap-3 text-[#1A2233]"><i
+                                    class="fa-solid fa-check text-[#0199a6] mt-1"></i> Corrective action tracking</li>
+                            <li class="flex items-start gap-3 text-[#1A2233]"><i
+                                    class="fa-solid fa-check text-[#0199a6] mt-1"></i> Basic dashboard & reporting</li>
+                            <li class="flex items-start gap-3 text-[#1A2233]"><i
+                                    class="fa-solid fa-check text-[#0199a6] mt-1"></i> Photo documentation</li>
+                            <li class="flex items-start gap-3 text-[#1A2233]"><i
+                                    class="fa-solid fa-check text-[#0199a6] mt-1"></i> Standard support</li>
+                        </ul>
+                    </div>
+
+                    <div class="relative z-10 lg:scale-105 lg:-my-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 z-30">
+                            <div
+                                class="whitespace-nowrap rounded-full bg-[#0199a6] px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-lg">
+                                Most Popular</div>
+                        </div>
+
+                        <div
+                            class="relative overflow-visible rounded-3xl bg-[#02306c] p-8 shadow-2xl shadow-[#02306c]/20">
+                            <div
+                                class="absolute top-0 right-0 w-40 h-40 bg-[#0199a6]/20 rounded-full blur-3xl pointer-events-none">
+                            </div>
+                            <div
+                                class="absolute -bottom-10 -left-10 w-40 h-40 bg-[#0199a6]/10 rounded-full blur-3xl pointer-events-none">
+                            </div>
+
+                            <div class="relative pt-6">
+                                <div class="flex items-center justify-between mb-6">
+                                    <h3 class="font-display text-xl font-bold text-white">Professional</h3>
+                                    <div
+                                        class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-[#0199a6]">
+                                        <i class="fa-solid fa-rocket"></i>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-white/70 mb-6">For growing multi-facility organizations needing
+                                    portfolio-wide visibility and trend analysis.</p>
+
+                                <div class="mb-8">
+                                    <div class="flex items-end gap-1.5">
+                                        <span class="font-display text-5xl font-bold text-white price-display"
+                                            data-monthly="$249" data-annual="$199">$249</span>
+                                        <span class="text-base font-medium text-white/60 mb-1.5">/ facility / mo</span>
+                                    </div>
+                                    <p id="billing-text-2" class="text-xs text-white/50 mt-2">Billed Monthly</p>
+                                </div>
+
+                                <a href="contact.html"
+                                    class="block w-full text-center px-6 py-3 rounded-full bg-[#0199a6] text-white font-semibold shadow-lg shadow-[#0199a6]/30 hover:bg-[#01807c] transition-colors duration-300 mb-8">
+                                    Schedule Demo
+                                </a>
+
+                                <ul class="space-y-4 text-sm">
+                                    <li class="flex items-start gap-3 text-white/90"><i
+                                            class="fa-solid fa-check text-[#0199a6] mt-1"></i> Everything in Starter
+                                    </li>
+                                    <li class="flex items-start gap-3 text-white/90"><i
+                                            class="fa-solid fa-check text-[#0199a6] mt-1"></i> Multi-facility oversight
+                                    </li>
+                                    <li class="flex items-start gap-3 text-white/90"><i
+                                            class="fa-solid fa-check text-[#0199a6] mt-1"></i> Advanced trend analysis
+                                    </li>
+                                    <li class="flex items-start gap-3 text-white/90"><i
+                                            class="fa-solid fa-check text-[#0199a6] mt-1"></i> Exportable executive
+                                        reports
+                                    </li>
+                                    <li class="flex items-start gap-3 text-white/90"><i
+                                            class="fa-solid fa-check text-[#0199a6] mt-1"></i> Priority support</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-3xl border border-[#E3E8EF] p-8 shadow-sm hover:shadow-xl hover:shadow-[#02306c]/5 transition-all duration-300 hover:-translate-y-1"
+                        data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="font-display text-xl font-bold text-[#02306c]">Enterprise</h3>
+                            <div
+                                class="w-10 h-10 rounded-xl bg-[#02306c]/5 flex items-center justify-center text-[#02306c]">
+                                <i class="fa-solid fa-building-shield"></i>
+                            </div>
+                        </div>
+                        <p class="text-sm text-[#5B6472] mb-6">For large or fast-growing portfolios requiring dedicated
+                            onboarding and custom reporting.</p>
+
+                        <div class="mb-8">
+                            <div class="flex items-end gap-1.5">
+                                <span class="font-display text-5xl font-bold text-[#02306c]">Custom</span>
+                            </div>
+                            <p class="text-xs text-[#5B6472] mt-2">Contact Sales for Pricing</p>
+                        </div>
+
+                        <a href="contact.html"
+                            class="block w-full text-center px-6 py-3 rounded-full bg-white border border-[#02306c]/20 text-[#02306c] font-semibold hover:bg-[#02306c] hover:text-white transition-colors duration-300 mb-8">
+                            Contact Sales
+                        </a>
+
+                        <ul class="space-y-4 text-sm">
+                            <li class="flex items-start gap-3 text-[#1A2233]"><i
+                                    class="fa-solid fa-check text-[#0199a6] mt-1"></i> Everything in Professional</li>
+                            <li class="flex items-start gap-3 text-[#1A2233]"><i
+                                    class="fa-solid fa-check text-[#0199a6] mt-1"></i> Dedicated onboarding</li>
+                            <li class="flex items-start gap-3 text-[#1A2233]"><i
+                                    class="fa-solid fa-check text-[#0199a6] mt-1"></i> Custom reporting & API support
+                            </li>
+                            <li class="flex items-start gap-3 text-[#1A2233]"><i
+                                    class="fa-solid fa-check text-[#0199a6] mt-1"></i> Dedicated account manager</li>
+                            <li class="flex items-start gap-3 text-[#1A2233]"><i
+                                    class="fa-solid fa-check text-[#0199a6] mt-1"></i> 24/7 Premium support</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <script>
+            (function () {
+                const monthlyBtn = document.getElementById('monthlyBtn');
+                const annualBtn = document.getElementById('annualBtn');
+                const togglePill = document.getElementById('togglePill');
+                const toggleContainer = togglePill ? togglePill.parentElement : null;
+                const prices = document.querySelectorAll('.price-display');
+                const billingTexts = [
+                    document.getElementById('billing-text-1'),
+                    document.getElementById('billing-text-2')
+                ];
+
+                let isAnnual = false;
+
+                function updatePillPosition() {
+                    if (!togglePill || !toggleContainer || !monthlyBtn || !annualBtn) return;
+                    const activeBtn = isAnnual ? annualBtn : monthlyBtn;
+                    const containerRect = toggleContainer.getBoundingClientRect();
+                    const activeRect = activeBtn.getBoundingClientRect();
+                    togglePill.style.width = `${activeRect.width}px`;
+                    togglePill.style.left = `${activeRect.left - containerRect.left}px`;
+                }
+
+                function updateToggle() {
+                    updatePillPosition();
+
+                    if (isAnnual) {
+                        annualBtn.classList.remove('text-[#5B6472]');
+                        annualBtn.classList.add('text-[#02306c]');
+                        monthlyBtn.classList.add('text-[#5B6472]');
+                        monthlyBtn.classList.remove('text-[#02306c]');
+                    } else {
+                        monthlyBtn.classList.remove('text-[#5B6472]');
+                        monthlyBtn.classList.add('text-[#02306c]');
+                        annualBtn.classList.add('text-[#5B6472]');
+                        annualBtn.classList.remove('text-[#02306c]');
+                    }
+
+                    prices.forEach(price => {
+                        const newPrice = isAnnual ? price.dataset.annual : price.dataset.monthly;
+                        price.style.opacity = '0';
+                        price.style.transform = 'translateY(-5px)';
+                        setTimeout(() => {
+                            price.textContent = newPrice;
+                            price.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                            price.style.opacity = '1';
+                            price.style.transform = 'translateY(0)';
+                        }, 150);
+                    });
+
+                    billingTexts.forEach(text => {
+                        if (text) {
+                            text.style.opacity = '0';
+                            setTimeout(() => {
+                                text.textContent = isAnnual ? 'Billed Annually' : 'Billed Monthly';
+                                text.style.transition = 'opacity 0.3s ease';
+                                text.style.opacity = '1';
+                            }, 150);
+                        }
+                    });
+                }
+
+                monthlyBtn.addEventListener('click', () => {
+                    if (isAnnual) {
+                        isAnnual = false;
+                        updateToggle();
+                    }
+                });
+
+                annualBtn.addEventListener('click', () => {
+                    if (!isAnnual) {
+                        isAnnual = true;
+                        updateToggle();
+                    }
+                });
+
+                if (toggleContainer) {
+                    requestAnimationFrame(updatePillPosition);
+                    window.addEventListener('resize', updatePillPosition);
+                }
+            })();
+        </script>
+
+
+        <section class="relative bg-[#F7F9FB] py-18 md:py-24 overflow-hidden">
+            <div class="absolute top-1/4 -right-20 w-96 h-96 bg-[#0199a6]/5 rounded-full blur-3xl pointer-events-none">
+            </div>
+
+            <div class="max-w-4xl mx-auto px-6 lg:px-8 relative">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span
+                        class="inline-block px-4 py-1.5 rounded-full bg-white border border-[#E3E8EF] text-[#02306c] text-[11px] font-bold tracking-[0.18em] uppercase ">FAQ</span>
+                    <h2
+                        class="mt-6 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-[#02306c] tracking-tight leading-[1.1]">
+                        Frequently asked questions
+                    </h2>
+                    <p class="mt-5 text-base md:text-lg text-[#5B6472] leading-relaxed max-w-2xl mx-auto">
+                        Everything you need to know about the product and billing. Can't find the answer you're looking
+                        for? <a href="contact.html" class="text-[#0199a6] font-semibold hover:underline">Contact our
+                            team</a>.
+                    </p>
+                </div>
+
+                <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+
+                    <div
+                        class="faq-item bg-white rounded-2xl border border-[#E3E8EF] shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+                        <button class="faq-trigger w-full flex items-center justify-between gap-4 p-6 text-left"
+                            aria-expanded="false">
+                            <span class=" text-base md:text-lg font-semibold text-[#02306c]">Is there a setup
+                                fee?</span>
+                            <span
+                                class="faq-icon shrink-0 w-8 h-8 rounded-full bg-[#F7F9FB] border border-[#E3E8EF] flex items-center justify-center text-[#02306c] transition-all duration-300">
+                                <i class="fa-solid fa-plus text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <p class="px-6 pb-6 text-[#5B6472] leading-relaxed">
+                                [PLACEHOLDER — confirm with client]. Typically, Starter and Professional plans have no
+                                setup fees, while Enterprise may include a customized onboarding fee depending on
+                                integration needs.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="faq-item bg-white rounded-2xl border border-[#E3E8EF] shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+                        <button class="faq-trigger w-full flex items-center justify-between gap-4 p-6 text-left"
+                            aria-expanded="false">
+                            <span class=" text-base md:text-lg font-semibold text-[#02306c]">Can we add
+                                facilities later?</span>
+                            <span
+                                class="faq-icon shrink-0 w-8 h-8 rounded-full bg-[#F7F9FB] border border-[#E3E8EF] flex items-center justify-center text-[#02306c] transition-all duration-300">
+                                <i class="fa-solid fa-plus text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <p class="px-6 pb-6 text-[#5B6472] leading-relaxed">
+                                Yes, Auditra is built to scale with your portfolio. You can add new facilities at any
+                                time directly from your dashboard, and your billing will be prorated automatically based
+                                on your current plan.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="faq-item bg-white rounded-2xl border border-[#E3E8EF] shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+                        <button class="faq-trigger w-full flex items-center justify-between gap-4 p-6 text-left"
+                            aria-expanded="false">
+                            <span class=" text-base md:text-lg font-semibold text-[#02306c]">Is training
+                                included?</span>
+                            <span
+                                class="faq-icon shrink-0 w-8 h-8 rounded-full bg-[#F7F9FB] border border-[#E3E8EF] flex items-center justify-center text-[#02306c] transition-all duration-300">
+                                <i class="fa-solid fa-plus text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <p class="px-6 pb-6 text-[#5B6472] leading-relaxed">
+                                [PLACEHOLDER — confirm with client]. Self-serve training resources and documentation are
+                                included in all plans. Professional and Enterprise tiers include live group onboarding
+                                sessions for your regional and facility teams.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="faq-item bg-white rounded-2xl border border-[#E3E8EF] shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+                        <button class="faq-trigger w-full flex items-center justify-between gap-4 p-6 text-left"
+                            aria-expanded="false">
+                            <span class=" text-base md:text-lg font-semibold text-[#02306c]">What does the
+                                Enterprise plan include?</span>
+                            <span
+                                class="faq-icon shrink-0 w-8 h-8 rounded-full bg-[#F7F9FB] border border-[#E3E8EF] flex items-center justify-center text-[#02306c] transition-all duration-300">
+                                <i class="fa-solid fa-plus text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <p class="px-6 pb-6 text-[#5B6472] leading-relaxed">
+                                The Enterprise plan includes everything in Professional, plus dedicated onboarding,
+                                custom reporting tailored to your organization's KPIs, API/integration support if you
+                                need to connect Auditra to existing HR or EHR systems, and a dedicated account manager
+                                to ensure your success.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="faq-item bg-white rounded-2xl border border-[#E3E8EF] shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+                        <button class="faq-trigger w-full flex items-center justify-between gap-4 p-6 text-left"
+                            aria-expanded="false">
+                            <span class=" text-base md:text-lg font-semibold text-[#02306c]">Do you offer
+                                discounts for large portfolios?</span>
+                            <span
+                                class="faq-icon shrink-0 w-8 h-8 rounded-full bg-[#F7F9FB] border border-[#E3E8EF] flex items-center justify-center text-[#02306c] transition-all duration-300">
+                                <i class="fa-solid fa-plus text-xs"></i>
+                            </span>
+                        </button>
+                        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <p class="px-6 pb-6 text-[#5B6472] leading-relaxed">
+                                Yes. For organizations managing more than 20 facilities, we offer volume-based pricing
+                                discounts. Please contact our sales team to discuss a customized quote for your
+                                portfolio.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const faqItems = document.querySelectorAll('.faq-item');
+
+                faqItems.forEach(item => {
+                    const trigger = item.querySelector('.faq-trigger');
+                    const content = item.querySelector('.faq-content');
+                    const icon = item.querySelector('.faq-icon i');
+
+                    trigger.addEventListener('click', () => {
+                        const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+                        faqItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                otherItem.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+                                otherItem.querySelector('.faq-content').style.maxHeight = '0px';
+                                otherItem.querySelector('.faq-icon i').className = 'fa-solid fa-plus text-xs';
+                                otherItem.querySelector('.faq-icon').classList.remove('bg-[#0199a6]/10', 'border-[#0199a6]/30', 'text-[#0199a6]', 'rotate-180');
+                                otherItem.querySelector('.faq-icon').classList.add('bg-[#F7F9FB]', 'border-[#E3E8EF]', 'text-[#02306c]');
+                            }
+                        });
+
+                        if (isOpen) {
+                            trigger.setAttribute('aria-expanded', 'false');
+                            content.style.maxHeight = '0px';
+                            icon.className = 'fa-solid fa-plus text-xs';
+                            item.querySelector('.faq-icon').classList.remove('bg-[#0199a6]/10', 'border-[#0199a6]/30', 'text-[#0199a6]', 'rotate-180');
+                            item.querySelector('.faq-icon').classList.add('bg-[#F7F9FB]', 'border-[#E3E8EF]', 'text-[#02306c]');
+                        } else {
+                            trigger.setAttribute('aria-expanded', 'true');
+                            content.style.maxHeight = content.scrollHeight + 'px';
+                            icon.className = 'fa-solid fa-minus text-xs';
+                            item.querySelector('.faq-icon').classList.remove('bg-[#F7F9FB]', 'border-[#E3E8EF]', 'text-[#02306c]');
+                            item.querySelector('.faq-icon').classList.add('bg-[#0199a6]/10', 'border-[#0199a6]/30', 'text-[#0199a6]', 'rotate-180');
+                        }
+                    });
+                });
+            });
+        </script>
+
+
+        <section class="relative bg-[#02306c] py-24 md:py-36 overflow-hidden">
+            <div class="absolute inset-0 pointer-events-none">
+                <div
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full bg-[#0199a6]/15 blur-[120px]">
+                </div>
+                <div class="absolute inset-0 opacity-[0.03]"
+                    style="background-image: linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px); background-size: 48px 48px;">
+                </div>
+            </div>
+
+            <div class="max-w-4xl mx-auto px-6 lg:px-8 relative text-center">
+                <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.1]"
+                    data-aos="fade-up">
+                    Not sure which plan fits your organization?
+                </h2>
+
+                <p class="mt-6 text-base md:text-lg text-[#A8C5E5] leading-relaxed max-w-2xl mx-auto" data-aos="fade-up"
+                    data-aos-delay="100">
+                    Our team can help you determine the best plan for your organization and provide a custom quote.
+                </p>
+
+                <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <a href="contact.html"
+                        class="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#0199a6] text-white font-semibold shadow-xl shadow-[#0199a6]/30 hover:bg-[#01807c] hover:shadow-2xl hover:shadow-[#0199a6]/40 hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#0199a6]/30 w-full sm:w-auto">
+                        Schedule Demo
+                        <i class="fa-solid fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                    <a href="features.html"
+                        class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white/5 backdrop-blur-sm border border-white/15 text-white font-semibold hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-white/10 w-full sm:w-auto">
+                        Explore Features
+                    </a>
+                </div>
+            </div>
+        </section>
 
         <div class="" id="footer"></div>
     </main>

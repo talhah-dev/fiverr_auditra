@@ -104,14 +104,7 @@
             animation: scrollX 35s linear infinite;
         }
 
-        .hero-grid {
-            background-image:
-                linear-gradient(to right, rgba(2, 48, 108, 0.06) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(2, 48, 108, 0.06) 1px, transparent 1px);
-            background-size: 56px 56px;
-            -webkit-mask-image: radial-gradient(ellipse 70% 50% at 50% 30%, black 20%, transparent 75%);
-            mask-image: radial-gradient(ellipse 70% 50% at 50% 30%, black 20%, transparent 75%);
-        }
+
 
         .dashboard-3d {
             transform: perspective(2000px) rotateX(8deg) translateY(-20px);
@@ -424,21 +417,21 @@
                                             class="flex items-center justify-between p-3 rounded-xl hover:bg-[#F7F9FB] transition border border-transparent hover:border-[#E3E8EF]">
                                             <div class="flex items-center gap-3">
                                                 <div
-                                                    class="w-9 h-9 rounded-lg bg-[#0199a6]/10 flex items-center justify-center">
+                                                    class="w-9 h-9 shrink-0 rounded-lg bg-[#0199a6]/10 flex items-center justify-center">
                                                     <i class="fa-solid fa-house-chimney text-[#0199a6] text-xs"></i>
                                                 </div>
                                                 <div>
-                                                    <p class="text-sm font-semibold text-[#1A2233]">Riverside Care
+                                                    <p class="md:text-sm text-xs font-semibold text-[#1A2233]">Riverside Care
                                                         Center</p>
                                                     <p class="text-[11px] text-[#5B6472]">Audited 2 days ago</p>
                                                 </div>
                                             </div>
                                             <div class="flex items-center gap-3">
-                                                <div class="w-16 h-1.5 rounded-full bg-[#E3E8EF] overflow-hidden">
+                                                <div class="md:w-16 w-10 h-1.5 rounded-full bg-[#E3E8EF] overflow-hidden">
                                                     <div class="h-full bg-[#0199a6] rounded-full" style="width:96%">
                                                     </div>
                                                 </div>
-                                                <span class="text-xs font-bold text-[#02306c] w-8 text-right">96%</span>
+                                                <span class="text-xs font-bold text-[#02306c] md:w-8 w-6 text-right">96%</span>
                                             </div>
                                         </div>
 
@@ -446,23 +439,23 @@
                                             class="flex items-center justify-between p-3 rounded-xl bg-[#FFF7ED] border border-[#FED7AA]">
                                             <div class="flex items-center gap-3">
                                                 <div
-                                                    class="w-9 h-9 rounded-lg bg-[#F59E0B]/15 flex items-center justify-center">
+                                                    class="w-9 h-9 shrink-0 rounded-lg bg-[#F59E0B]/15 flex items-center justify-center">
                                                     <i
                                                         class="fa-solid fa-triangle-exclamation text-[#D97706] text-xs"></i>
                                                 </div>
                                                 <div>
-                                                    <p class="text-sm font-semibold text-[#1A2233]">Maplewood Senior
+                                                    <p class="md:text-sm text-xs font-semibold text-[#1A2233]">Maplewood Senior
                                                         Living</p>
                                                     <p class="text-[11px] text-[#D97706] font-medium">3 open corrective
                                                         actions</p>
                                                 </div>
                                             </div>
                                             <div class="flex items-center gap-3">
-                                                <div class="w-16 h-1.5 rounded-full bg-[#E3E8EF] overflow-hidden">
+                                                <div class="md:w-16 w-10  h-1.5 rounded-full bg-[#E3E8EF] overflow-hidden">
                                                     <div class="h-full bg-[#F59E0B] rounded-full" style="width:78%">
                                                     </div>
                                                 </div>
-                                                <span class="text-xs font-bold text-[#D97706] w-8 text-right">78%</span>
+                                                <span class="text-xs font-bold text-[#D97706] md:w-8 text-right">78%</span>
                                             </div>
                                         </div>
                                     </div>
