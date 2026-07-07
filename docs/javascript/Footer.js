@@ -60,13 +60,13 @@ footer.innerHTML = `
                 </form>
                 
                 <div class="space-y-2 text-sm text-[#5B6472]">
-                    <a href="mailto:info@auditra.com" class="flex items-center gap-3 hover:text-[#02306c] transition-colors">
+                    <a href="mailto:auditra@coastalcompassgroup.llc" class="flex items-center gap-3 hover:text-[#02306c] transition-colors">
                         <i class="fa-solid fa-envelope text-[#0199a6] w-4"></i>
-                        info@auditra.com
+                        auditra@coastalcompassgroup.llc
                     </a>
                     <a href="tel:+11234567890" class="flex items-center gap-3 hover:text-[#02306c] transition-colors">
                         <i class="fa-solid fa-phone text-[#0199a6] w-4"></i>
-                        +1 (123) 456-7890
+                        (772) 360-6447
                     </a>
                 </div>
             </div>
