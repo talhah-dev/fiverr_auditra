@@ -17,13 +17,10 @@ footer.innerHTML = `
                     Standardized dietary compliance for multi-facility long-term care organizations. Identify risks earlier and strengthen survey readiness across every building.
                 </p>
                 <div class="flex items-center gap-3">
-                    <a href="#" aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-[#F7F9FB] border border-[#E3E8EF] flex items-center justify-center text-[#02306c] hover:bg-[#02306c] hover:text-white hover:border-[#02306c] transition-all duration-300">
+                    <a href="https://www.linkedin.com/in/rebeccaschilling2019" aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-[#F7F9FB] border border-[#E3E8EF] flex items-center justify-center text-[#02306c] hover:bg-[#02306c] hover:text-white hover:border-[#02306c] transition-all duration-300">
                         <i class="fa-brands fa-linkedin-in text-sm"></i>
                     </a>
-                    <a href="#" aria-label="Twitter" class="w-10 h-10 rounded-full bg-[#F7F9FB] border border-[#E3E8EF] flex items-center justify-center text-[#02306c] hover:bg-[#02306c] hover:text-white hover:border-[#02306c] transition-all duration-300">
-                        <i class="fa-brands fa-x-twitter text-sm"></i>
-                    </a>
-                    <a href="#" aria-label="YouTube" class="w-10 h-10 rounded-full bg-[#F7F9FB] border border-[#E3E8EF] flex items-center justify-center text-[#02306c] hover:bg-[#02306c] hover:text-white hover:border-[#02306c] transition-all duration-300">
+                    <a href="https://www.youtube.com/@Auditra007" aria-label="YouTube" class="w-10 h-10 rounded-full bg-[#F7F9FB] border border-[#E3E8EF] flex items-center justify-center text-[#02306c] hover:bg-[#02306c] hover:text-white hover:border-[#02306c] transition-all duration-300">
                         <i class="fa-brands fa-youtube text-sm"></i>
                     </a>
                 </div>
